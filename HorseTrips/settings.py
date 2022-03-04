@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'HorseTrips',
     'destinations',
     'reviews',
+    'continents',
 ]
 
 MIDDLEWARE = [
