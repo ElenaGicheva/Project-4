@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'destinations',
     'reviews',
     'users',
-    'tags'
+    'tags',
     'continents'
 ]
 
