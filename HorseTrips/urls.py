@@ -22,5 +22,6 @@ urlpatterns = [
     path('destinations/', include('destinations.urls')),
     path('reviews/', include('reviews.urls')),
     path('users/', include('users.urls')),
-    path('tags/', include('tags.urls'))
+    path('tags/', include('tags.urls')),
+    path('continents/', include('continents.urls'))
 ]
