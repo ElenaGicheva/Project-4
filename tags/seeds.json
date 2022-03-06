@@ -1,0 +1,9 @@
+[
+{
+  "model": "tags.tag",
+  "pk": 1,
+  "fields": {
+    "tag": "Field riding"
+  }
+}
+]

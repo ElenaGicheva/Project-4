@@ -1,0 +1,15 @@
+[
+{
+  "model": "destinations.destination",
+  "pk": 1,
+  "fields": {
+    "name": "Ireland",
+    "price": 2600,
+    "duration": 7,
+    "ability_level": "beginner",
+    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg",
+    "background_image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFhYYGRgZGBoYHBocHBkcGBoYGBocGRwaHBocIS4lHB4rIRoaJzgmKy8xNTU1GiQ7QDszPy40NTEBDAwMEA8QGhISHjQhISQ0NDQ0NDQ0NDQ1NDQ0NDQ0NDQ0NDE0NDQxNDQ0NDQ0NDE0NDQ0NDQ0NDU0NDQxNDQ0NP/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAECAwUGBwj/xABBEAABAwEFBAgFAgQEBgMAAAABAAIRIQMSMUFRBGFxkQUTIoGhscHwBhQy0eEHUhUjQvEWYnKyM0NzksLSJFOC/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAJxEAAgIBBAICAwADAQAAAAAAAAECEQMSEyFRBDEUQSJhkVKBoTL/2gAMAwEAAhEDEQA/ANhkBJzjq",
+    "description": "Really discover horse riding in Ireland"
+  }
+}
+]

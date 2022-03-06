@@ -1,0 +1,18 @@
+[
+{
+  "model": "reviews.review",
+  "pk": 1,
+  "fields": {
+    "test": "Still testing",
+    "timestamp": "2022-03-05"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 2,
+  "fields": {
+    "test": "Awesome",
+    "timestamp": "2022-03-06"
+  }
+}
+]

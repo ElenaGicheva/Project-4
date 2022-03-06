@@ -1,0 +1,10 @@
+[
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "username": "CoolDude",
+    "email": "CD@email.com"
+  }
+}
+]
