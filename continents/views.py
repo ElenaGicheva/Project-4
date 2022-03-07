@@ -5,10 +5,8 @@ from rest_framework.exceptions import NotFound
 from django.core.exceptions import ValidationError
 
 from .models import Continent
-from .serializers import ContinentSerializer
-from .serializers import PopulatedContinentSerializer
-
-# from .serializers import ContinentSerializer
+from .serializers.common import ContinentSerializer
+from .serializers.populated import PopulatedContinentSerializer
 
 
 class ContinentListView(APIView):
@@ -53,7 +51,7 @@ class ContinentDetailView(APIView):
             return Response(serialized_continent.data, status=status.HTTP_200_OK)
         except Continent.DoesNotExist:
             raise NotFound(detail="Continent not found")
-            return Response('Success', status=status.HTTP_200_OK)
+            
 
     def delete(self, _request, pk):
         continent = self.get_continent(pk=pk)
