@@ -12,7 +12,7 @@ class Review(models.Model):
     destination = models.ForeignKey(
         # this details the relationship with the foreign table. Syntax: name_of_app.ModelName
         "destinations.Destination",
-        # this specifies the filed the reviews will show when wuerying the foreign table...in this case the reviews
+        # this specifies the fieled the reviews will show when querying the foreign table...in this case the reviews
         related_name="reviews",
         # We are saying if a destination is deleted, the review for the destination should also be deleted.
         on_delete=models.CASCADE
