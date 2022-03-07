@@ -33,7 +33,7 @@ class DestinationListView(APIView):
             # If validation fails, return the errors is_valid adds to serilized data
             return Response({"detail": str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
         except AssertionError as e:
-            return Response({"detail": str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            return Response({"detail": serialized_data.errors}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
         except:
             return Response(
                 {"detail": "Unprocessable Entity"},

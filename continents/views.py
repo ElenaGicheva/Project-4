@@ -6,6 +6,9 @@ from django.core.exceptions import ValidationError
 
 from .models import Continent
 from .serializers import ContinentSerializer
+from .serializers import PopulatedContinentSerializer
+
+# from .serializers import ContinentSerializer
 
 
 class ContinentListView(APIView):
@@ -46,12 +49,11 @@ class ContinentDetailView(APIView):
     def get(self, _request, pk):
         try:
             continent = Continent.objects.get(pk=pk)
-            serialized_continent = ContinentSerializer(continent)
+            serialized_continent = PopulatedContinentSerializer(continent)
             return Response(serialized_continent.data, status=status.HTTP_200_OK)
         except Continent.DoesNotExist:
             raise NotFound(detail="Continent not found")
-
-        return Response('Success', status=status.HTTP_200_OK)
+            return Response('Success', status=status.HTTP_200_OK)
 
     def delete(self, _request, pk):
         continent = self.get_continent(pk=pk)

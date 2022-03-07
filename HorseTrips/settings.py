@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'HorseTrips',
     'destinations',
     'continents',
-    'users',
     'tags',
     'reviews',
 ]

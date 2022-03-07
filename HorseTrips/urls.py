@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('destinations/', include('destinations.urls')),
     path('reviews/', include('reviews.urls')),
-    path('users/', include('users.urls')),
     path('tags/', include('tags.urls')),
-    path('continents/', include('continents.urls'))
+    path('continents/', include('continents.urls')),
+    path('jwt_auth/', include ('jwt_auth.urls'))
 ]

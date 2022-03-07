@@ -13,7 +13,8 @@ class Destination(models.Model):
     description = models.CharField(max_length=500, default=None)
     tags = models.ManyToManyField(
         "tags.Tag",
-        related_name="destinations"
+        related_name="destinations", 
+        default=None
     )
 
     continent = models.ForeignKey(
