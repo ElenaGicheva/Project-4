@@ -11,6 +11,16 @@ class Destination(models.Model):
     image = models.CharField(max_length=500, default=None)
     background_image = models.CharField(max_length=500, default=None)
     description = models.CharField(max_length=500, default=None)
+    tags = models.ManyToManyField(
+        "tags.Tag",
+        related_name="destinations"
+    )
+
+    continent = models.ForeignKey(
+        "continents.Continent",
+        related_name="destinations",
+        on_delete=models.CASCADE
+    )
 
     def __str__(self):
         return f"{self.name}"

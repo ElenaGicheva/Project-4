@@ -2,10 +2,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
-from django.core.exceptions import ValidationError
+from django.db import IntegrityError
 
 from .models import Destination
-from .serializers import DestinationSerializer
+from .serializers.common import DestinationSerializer
+from .serializers.populated import PopulatedDestinationSerializer
 
 # views
 
@@ -17,7 +18,7 @@ class DestinationListView(APIView):
         serialized_destinations = DestinationSerializer(
             destinations, many=True)
         print('destinations', destinations)
-        print('serialized_destinations', serialized_destinations)
+        print('serialized_destinations', serialized_destinations.data)
         return Response(serialized_destinations.data, status=status.HTTP_200_OK)
 
 # Allows us to post new record into our Destinations table
@@ -28,9 +29,16 @@ class DestinationListView(APIView):
             serialized_data.save()
             print(serialized_data.data)
             return Response(serialized_data.data, status=status.HTTP_201_CREATED)
-        except ValidationError:
+        except IntegrityError as e:
             # If validation fails, return the errors is_valid adds to serilized data
-            return Response(serialized_data.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            return Response({"detail": str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+        except AssertionError as e:
+            return Response({"detail": str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+        except:
+            return Response(
+                {"detail": "Unprocessable Entity"},
+                status=status.HTTP_422_UNPROCESSABLE_ENTITY
+            )
 
 
 # The detail view will be for querying specific existing data
@@ -47,18 +55,13 @@ class DestinationDetailView(APIView):
     # route returns one record that matches pk
 
     def get(self, _request, pk):
-        try:
-            destination = Destination.objects.get(pk=pk)
-            serialized_destination = DestinationSerializer(destination)
-            return Response(serialized_destination.data, status=status.HTTP_200_OK)
-        except Destination.DoesNotExist:
-            raise NotFound(detail="Destination not found")
-
-        return Response('Success', status=status.HTTP_200_OK)
+        destination = self.get_destination(pk)
+        serialized_destination = PopulatedDestinationSerializer(destination)
+        return Response(serialized_destination.data, status=status.HTTP_200_OK)
 
     def delete(self, _request, pk):
         destination = self.get_destination(pk=pk)
-        serialized_destination = DestinationSerializer(destination)
+        destination.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     def put(self, request, pk):
@@ -69,5 +72,7 @@ class DestinationDetailView(APIView):
             serialized_destination.is_valid()
             serialized_destination.save()
             return Response(serialized_destination.data, status=status.HTTP_202_ACCEPTED)
+        except AssertionError as e:
+            return Response({"detail": str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
         except:
             return Response("Unprocessable Entity", status=status.HTTP_422_UNPROCESSABLE_ENTITY)
