@@ -1,11 +1,12 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.exceptions import NotFound
 from rest_framework import status  # status lists all availabe response codes
 
 # Exceptions
+from rest_framework.exceptions import NotFound, PermissionDenied
 from django.db import IntegrityError
 
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 # Serializers
 from .serializers.common import ReviewSerializer
 
@@ -16,10 +17,14 @@ from .models import Review
 
 
 class ReviewListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     # Add review
     def post(self, request):
+        request.data['owner'] = request.user.id
         print(request.data)
+        # print('R.User -->', request.user.id)
+
         serialized_review = ReviewSerializer(data=request.data)
         try:
             serialized_review.is_valid()
@@ -35,11 +40,14 @@ class ReviewListView(APIView):
 
 
 class ReviewDetailView(APIView):
-    def delete(self, _request, pk):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+    def delete(self, request, pk):
+        print('USER --->', request.user.id)
         try:
             review_to_delete = Review.object.get(pk=pk)
-            review_to_delete.delete()
-            # If it does find a review, this now means it will dealte it
+            if review_to_delete.owner != request.user:
+              raise PermissionDenied(detail='Unauthorised')
+            # If it does find a review, this now means it will delete it
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Review.DoesNotExist:
             raise NotFound(detail="Review not found")

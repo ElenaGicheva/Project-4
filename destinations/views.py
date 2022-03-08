@@ -8,10 +8,12 @@ from .models import Destination
 from .serializers.common import DestinationSerializer
 from .serializers.populated import PopulatedDestinationSerializer
 
-# views
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
 
 
 class DestinationListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def get(self, _request):
         destinations = Destination.objects.all()
