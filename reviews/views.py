@@ -32,11 +32,11 @@ class ReviewListView(APIView):
             print(serialized_review.data)
             return Response(serialized_review.data, status=status.HTTP_201_CREATED)
         except AssertionError as e:
-            print(str(e))
+            print(serialized_review.errors)
             return Response({"detail": str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
             # e is a type: AsssertionError needed to convert to string as Assertion error can't convert into JSON, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
-        except:
-            return Response("Unprocessable Entity", status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+        # except:
+        #     return Response("Unprocessable Entity", status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 
 class ReviewDetailView(APIView):

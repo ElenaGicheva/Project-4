@@ -1,74 +1,70 @@
 [
 {
-  "model": "continents.continent",
-  "pk": 1,
-  "fields": {
-    "name": "Europe",
-    "image": "eeef"
-  }
-},
-{
-  "model": "continents.continent",
-  "pk": 2,
-  "fields": {
-    "name": "Europe",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
-  }
-},
-{
-  "model": "continents.continent",
-  "pk": 3,
-  "fields": {
-    "name": "Europe",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
-  }
-},
-{
-  "model": "continents.continent",
+  "model": "destinations.destination",
   "pk": 4,
   "fields": {
-    "name": "Europe",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
+    "name": "Spain",
+    "price": 800,
+    "duration": 5,
+    "ability_level": "Beginner",
+    "image": "https://cdn.theculturetrip.com/wp-content/uploads/2017/11/horse-1139142_1920.jpg",
+    "background_image": "https://fantasiaadventureholidays.com/images/horses-on-the-beach.jpg",
+    "description": "LOS ALAMOS - Our best selling ride in Europe for many years and for good reason. The warm welcome extended to guests, the fun atmosphere, the well trained horses, and the fabulous riding ensure guests often return.",
+    "continent": 1,
+    "tags": [
+      1
+    ]
   }
 },
 {
-  "model": "continents.continent",
+  "model": "destinations.destination",
   "pk": 5,
   "fields": {
-    "name": "Europe",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
+    "name": "Italy",
+    "price": 830,
+    "duration": 3,
+    "ability_level": "Advanced",
+    "image": "https://www.unicorntrails.com/files/galleries/ride467_5489",
+    "background_image": "https://www.marehotel.it/wp-content/uploads/2020/07/horsewatching-liguria-1.jpg",
+    "description": "The trails take you through narrow valleys and canyons, across rivers into high mountain country, and along smooth grassy paths ideal for long, fast tölts. The horses stay out on the trail each evening whilst you return to the comfort of your cottage, and the welcome hot tub..",
+    "continent": 1,
+    "tags": [
+      3
+    ]
   }
 },
 {
-  "model": "continents.continent",
-  "pk": 6,
-  "fields": {
-    "name": "Europe",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
-  }
-},
-{
-  "model": "continents.continent",
+  "model": "destinations.destination",
   "pk": 7,
   "fields": {
-    "name": "Africa",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
+    "name": "Iceland",
+    "price": 950,
+    "duration": 5,
+    "ability_level": "Intermediate",
+    "image": "https://i.pinimg.com/736x/2a/57/9e/2a579e1c7fb5a64cc5fa97872680c981.jpg",
+    "background_image": "https://cdn.audleytravel.com/3602/2573/79/15975893-icelandic-horses.jpg",
+    "description": "Northern Lights Ride (3 nights/3 riding days) Autumn in Iceland means a colourful countryside and Northern Lights dancing in the black night sky. Enjoy visiting the best known sights in Iceland. Ride the Icelandic horse along fine bridle paths and hopefully view dazzling Northern Lights after a good day in the saddle.",
+    "continent": 1,
+    "tags": [
+      2
+    ]
   }
 },
 {
-  "model": "continents.continent",
-  "pk": 9,
+  "model": "destinations.destination",
+  "pk": 8,
   "fields": {
-    "name": "North America",
-    "image": "wedaxsdc"
-  }
-},
-{
-  "model": "continents.continent",
-  "pk": 10,
-  "fields": {
-    "name": "Asia",
-    "image": "rehifdkjcc"
+    "name": "Botswana - Macatoo",
+    "price": 3500,
+    "duration": 6,
+    "ability_level": "Intermediate",
+    "image": "sdsfghgjhkbhfvdc",
+    "background_image": "dsdfghjklkmnbvc bnm,.",
+    "description": "Run with the wildebeest. Splash through the wetlands. Canter across the open plains. It’s a safari like no other.  This epic adventure takes you to the heart of Botswana’s Okavango Delta, one of Africa’s great wildlife habitats. Home to elephant, hippo, leopard, lion, giraffe and wild dog, this is your chance to see some of the world’s most endangered species. And you’ll be riding right alongside them – on horseback.",
+    "continent": 7,
+    "tags": [
+      5
+    ]
   }
 }
 ]

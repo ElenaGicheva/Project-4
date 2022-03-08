@@ -24,5 +24,6 @@ class Review(models.Model):
     )
 
 
-def __str__(self):
-    return f"{self.description} ({self.created_at})"
+    def __str__(self):
+        return f"{self.description}"
+      # return f"{self.description} ({self.created_at})"
