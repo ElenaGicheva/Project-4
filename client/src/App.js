@@ -4,7 +4,7 @@ import axios from 'axios'
 function App() {
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get('/api/continents/') // * <-- replace with your endpoint
+      const { data } = await axios.get('/api/destinations/') // * <-- replace with your endpoint
       console.log(data)
     }
     getData()

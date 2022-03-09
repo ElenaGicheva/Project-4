@@ -1,1 +1,178 @@
 [
+  {
+    "model": "reviews.review",
+    "pk": 1,
+    "fields": {
+      "description": "Best holiday ever!",
+      "text": "The Tuli Trail is a wonderful horse safari. Being able to see so much game horseback is an experience that will last a lifetime.",
+      "created_at": "2022-03-08T19:45:51.723Z",
+      "destination": 8,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 2,
+    "fields": {
+      "description": "Lovely holiday!",
+      "text": "Awesome. I had an amazing holiday in Kyrgyzstan. The horses were great as was the guide and the rest of the group.",
+      "created_at": "2022-03-08T19:58:22.223Z",
+      "destination": 10,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 3,
+    "fields": {
+      "description": "Wow",
+      "text": "This is more than a riding holiday. A culturally enriching experience which gives the opportunity to ride incredible Peruvian horses across epic landscapes. An experience not to be missed.",
+      "created_at": "2022-03-09T10:19:10.730Z",
+      "destination": 11,
+      "owner": 2
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 4,
+    "fields": {
+      "description": "Stunning views",
+      "text": "Riding was exciting but safe. What more could you want. This was a well-organised wonderful holiday that exceeded my expectations.",
+      "created_at": "2022-03-09T10:22:40.904Z",
+      "destination": 7,
+      "owner": 2
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 5,
+    "fields": {
+      "description": "5 stars",
+      "text": "Beautiful views, splendid food, and fabulous horses.",
+      "created_at": "2022-03-09T10:23:49.959Z",
+      "destination": 5,
+      "owner": 2
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 6,
+    "fields": {
+      "description": "Unforgetable",
+      "text": "This trip features fantastic riding in the wilderness, a visit to the rock engravings at Twyfelfontein and the chance of seeing desert-adapted elephant and rhino...adventure in abundance!",
+      "created_at": "2022-03-09T15:11:59.672Z",
+      "destination": 13,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 7,
+    "fields": {
+      "description": "Made memories for life",
+      "text": "This was the most wonderful trip I have ever been on! From start to finish everything and everyone was just perfect. I had such a happy time.",
+      "created_at": "2022-03-09T15:54:59.857Z",
+      "destination": 14,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 8,
+    "fields": {
+      "description": "A dream come true",
+      "text": "Wonderful riding, great Hosts. Brilliant well behaved, forward going horses.\r\nLoved every moment.",
+      "created_at": "2022-03-09T16:16:03.195Z",
+      "destination": 12,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 9,
+    "fields": {
+      "description": "Maravilloso!",
+      "text": "The horses were wonderful. Very well behaved and trained, with wonderful personalities. They were chosen very well for each guest. The scenery is fantastic and there was ample opportunities for long canters and gallops. Just perfect!",
+      "created_at": "2022-03-09T16:19:13.271Z",
+      "destination": 4,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 10,
+    "fields": {
+      "description": "Take me back!",
+      "text": "Everything about the ride, location, accommodation and most importantly the horses were beyond my expectations, and I have been on many horse riding adventures.",
+      "created_at": "2022-03-09T16:23:50.046Z",
+      "destination": 9,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 11,
+    "fields": {
+      "description": "Couldn't be better",
+      "text": "Brilliant riding along coastal trails and beaches, the guides were very knowledgeable and looked after the horses extremely well. The final itinerary I received was very detailed and gave me all the information I needed for the trip and more.",
+      "created_at": "2022-03-09T16:33:41.595Z",
+      "destination": 15,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 12,
+    "fields": {
+      "description": "Magnifique",
+      "text": "The horses were beautifully groomed everyday. The tack was top rate. We did lots of cantering along wonderful trails along the rivers and in the forest. One of the best holidays I have ever had in my 70 years.",
+      "created_at": "2022-03-09T16:54:21.158Z",
+      "destination": 16,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 13,
+    "fields": {
+      "description": "Will be back!",
+      "text": "Excellent riding country - not one gate in the whole week. Plenty of lovely fast canters on sensible but willing horses. Loved every minute.",
+      "created_at": "2022-03-09T17:03:44.250Z",
+      "destination": 17,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 14,
+    "fields": {
+      "description": "Footsteps of Lawrence",
+      "text": "I’ve wanted to do this ride for near on 20 years, it didn’t disappoint! The riding and scenery was stunning. The wadi rum desert is unspoilt with few tourists. Every corner turned reminded me of being on a hollywood film set!",
+      "created_at": "2022-03-09T18:34:49.007Z",
+      "destination": 18,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 15,
+    "fields": {
+      "description": "Magical",
+      "text": "The places we stayed at were varied and we were frequently surprised by beautiful converted havelis/palaces! It was the riding that attracted me to the holiday, of course, but I am glad I stayed for the sightseeing days too - Jaipur and Agra were amazing - and the Taj, well, words fail me!!!",
+      "created_at": "2022-03-09T18:48:28.030Z",
+      "destination": 19,
+      "owner": 1
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 16,
+    "fields": {
+      "description": "*****",
+      "text": "Should be on everyone's bucket list!",
+      "created_at": "2022-03-09T18:59:02.370Z",
+      "destination": 20,
+      "owner": 1
+    }
+  }
+]

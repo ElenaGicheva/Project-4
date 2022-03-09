@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "name": "Europe",
-    "image": "eeef"
+    "image": "https://wallpapershome.com/images/pages/pic_v/17766.jpg"
   }
 },
 {
@@ -52,23 +52,23 @@
   "pk": 7,
   "fields": {
     "name": "Africa",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
+    "image": "https://i.pinimg.com/originals/47/42/e4/4742e406bce6ca8bd53b4f6ec362835d.jpg"
   }
 },
 {
   "model": "continents.continent",
   "pk": 9,
   "fields": {
-    "name": "North America",
-    "image": "wedaxsdc"
+    "name": "Americas",
+    "image": "https://r1.ilikewallpaper.net/iphone-x-wallpapers/download/96084/Rio-De-Janeiro-Cityscape-Brazil-Sunset-iphone-x-wallpaper-ilikewallpaper_com.jpg"
   }
 },
 {
   "model": "continents.continent",
-  "pk": 10,
+  "pk": 13,
   "fields": {
-    "name": "Asia",
-    "image": "rehifdkjcc"
+    "name": "Asia and Astralasia",
+    "image": "https://i.pinimg.com/736x/e4/bd/b8/e4bdb83397d2859e1a8513b30f63c4ef--south-wales-australia-travel.jpg"
   }
 }
 ]
