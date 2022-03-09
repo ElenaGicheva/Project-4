@@ -1,13 +1,1 @@
 [
-{
-  "model": "reviews.review",
-  "pk": 3,
-  "fields": {
-    "description": "Best holiday ever!",
-    "text": "Amazing holiday! The horses were excellent, very forward going and responsive. They were beautifully groomed everyday.",
-    "created_at": "2022-03-08T12:54:07.627Z",
-    "destination": 4,
-    "owner": 2
-  }
-}
-]

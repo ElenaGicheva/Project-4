@@ -19,9 +19,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('destinations/', include('destinations.urls')),
-    path('reviews/', include('reviews.urls')),
-    path('tags/', include('tags.urls')),
-    path('continents/', include('continents.urls')),
-    path('auth/', include ('jwt_auth.urls'))
+    path('api/destinations/', include('destinations.urls')),
+    path('api/reviews/', include('reviews.urls')),
+    path('api/tags/', include('tags.urls')),
+    path('api/continents/', include('continents.urls')),
+    path('api/auth/', include('jwt_auth.urls'))
 ]
