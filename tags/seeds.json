@@ -33,5 +33,33 @@
   "fields": {
     "tag": "Fields"
   }
+},
+{
+  "model": "tags.tag",
+  "pk": 6,
+  "fields": {
+    "tag": "Trail"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 7,
+  "fields": {
+    "tag": "Family"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 8,
+  "fields": {
+    "tag": "Safari"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 9,
+  "fields": {
+    "tag": "Desert"
+  }
 }
 ]
