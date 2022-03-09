@@ -12,7 +12,8 @@
     "description": "LOS ALAMOS - Our best selling ride in Europe for many years and for good reason. The warm welcome extended to guests, the fun atmosphere, the well trained horses, and the fabulous riding ensure guests often return.",
     "continent": 1,
     "tags": [
-      1
+      1,
+      7
     ]
   }
 },
@@ -58,12 +59,229 @@
     "price": 3500,
     "duration": 6,
     "ability_level": "Intermediate",
-    "image": "sdsfghgjhkbhfvdc",
-    "background_image": "dsdfghjklkmnbvc bnm,.",
+    "image": "https://images.immediate.co.uk/production/volatile/sites/23/2021/09/Silhouetted-elephants.-Chris-Packham.-Remembering-Elephants-da11c3e.jpg?quality=90&resize=620%2C413",
+    "background_image": "https://www.ridebotswana.com/wp-content/uploads/2017/03/slide-horse-riders-elephants.jpg",
     "description": "Run with the wildebeest. Splash through the wetlands. Canter across the open plains. It’s a safari like no other.  This epic adventure takes you to the heart of Botswana’s Okavango Delta, one of Africa’s great wildlife habitats. Home to elephant, hippo, leopard, lion, giraffe and wild dog, this is your chance to see some of the world’s most endangered species. And you’ll be riding right alongside them – on horseback.",
     "continent": 7,
     "tags": [
       5
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 9,
+  "fields": {
+    "name": "Ecuador",
+    "price": 2460,
+    "duration": 4,
+    "ability_level": "Advanced",
+    "image": "https://www.ecuadorecoadventures.com/wp-content/uploads/2018/01/IMG_5485.jpg",
+    "background_image": "https://ampascachi.com/images/blog/vacaciones-caballo-mundo/sudamerica/ecuador/chagras-way.jpg",
+    "description": "The ride begins north of Quito, on the plains beneath Cayambe Volcano. Explore the fields and valleys of the northern highlands and then ride onwards to the eastern slopes of Imbabura and into the San Pablo valley. The ride finishes in the open spaces of Cotopaxi National Park.  This is an exciting and challenging journey which tales you through contrasting parts of Ecuador.",
+    "continent": 9,
+    "tags": [
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 10,
+  "fields": {
+    "name": "Kyrgyzstan",
+    "price": 1500,
+    "duration": 10,
+    "ability_level": "Intermediate",
+    "image": "https://www.kyrgyzstantravel.com/cdn/kg-public/jeux_buzkashi-MAX-w1000h600.jpg",
+    "background_image": "https://photos.tpn.to/gp/jm/rs/qi/800x450.jpg",
+    "description": "This adventurous trail ride follows part of the ancient silk route. There is a real contrast of landscapes with deep fertile valleys and arid canyons, separated by high mountain passes. Reaching the high grasslands, the route takes you over open pastures with a backdrop of snow capped mountains.",
+    "continent": 13,
+    "tags": [
+      2,
+      4
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 11,
+  "fields": {
+    "name": "Peru",
+    "price": 4100,
+    "duration": 10,
+    "ability_level": "Intermediate",
+    "image": "https://www.travelkyrgyzstan.kg/wp-content/uploads/2021/07/horses_of_kyrgyzstan_1-min.jpeg",
+    "background_image": "https://www.aracari.com/wp-content/uploads/2018/02/best-horse-riding-in-peru-2.jpg",
+    "description": "This is a journey on horseback past Inca ruins, across high wooden bridges and through colourful rural villages. As you ride you’ll see local people working their fields; often their donkeys, dogs, chickens, pigs, llamas and cows are close by.",
+    "continent": 9,
+    "tags": [
+      4,
+      6
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 12,
+  "fields": {
+    "name": "Tanzania",
+    "price": 4700,
+    "duration": 7,
+    "ability_level": "Advanced",
+    "image": "https://africanhorsesafaris.com/wp-content/uploads/2018/11/Kazkazi-Elephant-18-1-600x403.jpg",
+    "background_image": "https://www.worldtravelguide.net/wp-content/uploads/2017/04/Think-Tanzania-Serengeti-Zebra-480747213-NiseriN-copy.jpg",
+    "description": "These mobile horse safaris take you off the beaten track and promise to be an unforgettable experience. Your experienced and knowledgeable guides will take you deep into the bush to witness the wonders that Africa has to offer; the wildlife, the scenery, and the interaction with the local tribes who inhabit these areas.",
+    "continent": 7,
+    "tags": [
+      5
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 13,
+  "fields": {
+    "name": "Namibia",
+    "price": 4500,
+    "duration": 10,
+    "ability_level": "Intermediate",
+    "image": "https://www.farandride.com/images/photos/banner/e6fe60899.jpg",
+    "background_image": "https://inthesaddle-131c4.kxcdn.com/wp-content/uploads/2018/02/NamibiaHorseSafari_TCunniffe_029.jpg",
+    "description": "The Damara Ride explores a beautifully stark part of Namibia. Almost inaccessible, with vast open spaces, ancient craters and remnants from prehistoric times, this is a true adventure on horseback. There are long days in the saddle and plenty of fast riding to enjoy. You’ll encounter diverse terrain, from grassy plains, open desert and mountains. You might spot desert-adapted game along the way.",
+    "continent": 7,
+    "tags": [
+      8,
+      7
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 14,
+  "fields": {
+    "name": "Mozambique",
+    "price": 3340,
+    "duration": 7,
+    "ability_level": "Beginner",
+    "image": "https://media-cdn.tripadvisor.com/media/photo-s/06/b3/68/c9/mozambique-horse-safari.jpg",
+    "background_image": "https://inthesaddle-131c4.kxcdn.com/wp-content/uploads/2018/04/MHS-1-1920x750.jpg",
+    "description": "Ride along white sandy beaches splashing in and out of the warm waters of the Indian Ocean where the coastline is dotted with fishing boats and dhows. You ride over deserted beaches and cliff top paths with views across to the Bazaruto Archipelago, through uninhabited bush, dunes and mangroves.  This riding holiday is relaxed, flexible, and tailored to your length of stay with a mixture of half day and all day rides.",
+    "continent": 7,
+    "tags": [
+      1,
+      7
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 15,
+  "fields": {
+    "name": "Morocco",
+    "price": 790,
+    "duration": 7,
+    "ability_level": "Beginner",
+    "image": "https://www.emotions.ae/wp-content/uploads/2020/11/BEACH-HORSE-RIDING.jpg",
+    "background_image": "https://www.farandride.com/images/photos/banner/76ce1ecb1.jpg",
+    "description": "During the summer months when the interior of the country is too hot to ride, the trail rides along the Atlantic coast, south of Essaouira, are ideal. Along the coastline the cool breeze makes for comfortable riding conditions.  There are three full days riding, two half days and a non-riding day to explore Essaouira.",
+    "continent": 7,
+    "tags": [
+      1,
+      7
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 16,
+  "fields": {
+    "name": "France",
+    "price": 2300,
+    "duration": 6,
+    "ability_level": "Intermediate",
+    "image": "https://en.normandie-tourisme.fr/wp-content/uploads/sites/3/2020/04/oeil-de-cheval-e-spek-fotolia-com-1600x900.jpg",
+    "background_image": "https://www.equus-journeys.com/photos/1800x1200/chambord-castle-and-horseback-riders-9285.jpg",
+    "description": "Riding from chateau to chateau takes you back to the 16th century when the surrounding land was reserved as royal hunting grounds. Highlights include the Grand Chateau de Chambord, constructed like many others in the distinct French Renaissance style that blended traditional medieval and classical Italian forms.",
+    "continent": 1,
+    "tags": [
+      4,
+      7
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 17,
+  "fields": {
+    "name": "Bulgaria",
+    "price": 1140,
+    "duration": 7,
+    "ability_level": "Intermediate",
+    "image": "https://www.ventureco-worldwide.com/wp-content/uploads/2018/11/Bulgaria%E2%80%99s-Golden-Treasure-Trail.jpg",
+    "background_image": "https://res.cloudinary.com/whistler/image/upload/w_500,c_scale,dpr_3.0,q_auto/v1/s3/images/header/horseback.jpg",
+    "description": "These riding itineraries have been designed to give plenty of opportunity to visit the historical sites and explore the diverse natural landscapes of Bulgaria including the lowlands plains, forested foothills and plateaux, river valley basins and mountains.",
+    "continent": 1,
+    "tags": [
+      2,
+      4,
+      6
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 18,
+  "fields": {
+    "name": "Jordan",
+    "price": 1600,
+    "duration": 9,
+    "ability_level": "Intermediate",
+    "image": "https://www.horsexplore.com/upload/images/hx/cm4/large_800x450/jordanien/Jordanien_Petra_wadi_rum_ridresa_horseXplore_23.jpg",
+    "background_image": "https://www.farandride.com/images/photos/banner/fce39d2b0.jpg",
+    "description": "Our ride in Jordan is three holidays rolled into one – visiting Petra, one of the great sights of the country, riding in the Wadi Rum and then visiting the Dead Sea. As you journey you may meet Bedouin families living in traditional nomadic camps. The perfect end to a day on horseback is to watch the sand turn from pink to deep orange as the sun sets, whilst eating delicious local dishes prepared over an open fire.",
+    "continent": 13,
+    "tags": [
+      7,
+      9
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 19,
+  "fields": {
+    "name": "India",
+    "price": 2100,
+    "duration": 9,
+    "ability_level": "Intermediate",
+    "image": "https://i0.wp.com/equestrianadventuresses.com/wp-content/uploads/2020/11/horse-riding-in-india-10.jpg?fit=960%2C671",
+    "background_image": "https://www.anotherworldadventures.com/wp-content/uploads/2019/07/Horse-India-Balotra-10-888x545.jpg",
+    "description": "Ride through the ancient kingdoms of Shekhawati and experience the complete spectrum of life in Rajasthan. Subsistence farmers, who maintain a very simple existence, to the privileged life of the princes. Ride in the state once known as Registhan: “land of desert”. Ride over a wide variety of terrain including desert, farmlands, rocky gorges, acacia forests, jungle, scrub and the fertile Aravali hills.",
+    "continent": 13,
+    "tags": [
+      9,
+      5
+    ]
+  }
+},
+{
+  "model": "destinations.destination",
+  "pk": 20,
+  "fields": {
+    "name": "New Zealand",
+    "price": 3700,
+    "duration": 12,
+    "ability_level": "Advanced",
+    "image": "https://cdn.tourradar.com/s3/tour/1500x800/176582_81977324.jpg",
+    "background_image": "https://inthesaddle-131c4.kxcdn.com/wp-content/uploads/2018/07/Alpine-Horse-safaris-16b-1920x750.jpg",
+    "description": "The longest pack trip in New Zealand.The scenery varies along the way. From snow capped mountains and open tussock pastures to wide flowing rivers and sparkling lakes.Please note that this is an adventurous, participatory ride and you will be involved in the daily work on the trip.",
+    "continent": 13,
+    "tags": [
+      2,
+      4,
+      6
     ]
   }
 }
