@@ -7,7 +7,7 @@ const Destinations = () => {
   const [hasError, setHasError] = useState({ error: false, message: '' })
 
   useEffect(() => {
-    const getContinents = async () => {
+    const getDestinations = async () => {
       try {
         const { data } = await axios.get('/api/destinations/')
         setContinent(data)
@@ -15,7 +15,7 @@ const Destinations = () => {
         setHasError({ error: true, message: err.message })
       }
     }
-    getContinents()
+    getDestinations()
   }, [])
 
   return (

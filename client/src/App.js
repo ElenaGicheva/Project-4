@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import Nav from './components/Nav'
 import Home from './components/Home'
-import Destinations from './components/pages/Continent'
+import Destinations from './components/pages/Destination'
 // import Footer from './components/Footer'
 
 function App() {
