@@ -68,3 +68,8 @@ class ContinentDetailView(APIView):
             return Response(serialized_continent.data, status=status.HTTP_202_ACCEPTED)
         except:
             return Response("Unprocessable Entity", status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+
+# class ContinentDestinationView(APIView):
+#     def get(self, _request, pk):
+

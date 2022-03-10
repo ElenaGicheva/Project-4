@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import Nav from './components/Nav'
 import Home from './components/Home'
-import Destinations from './components/pages/Continent'
+import Destinations from './components/pages/Destinations'
 // import Footer from './components/Footer'
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/destinations" element={<Destinations />} />
+        <Route path="/destinations/:continentId" element={<Destinations />} />
 
       </Routes>
     </BrowserRouter>
