@@ -1,13 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-const Nav = () => {
+// import { Link } from 'react-router-dom'
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container'
 
-  return (
-    <header>
-      <Link to="/">Home</Link>
-    </header>
-  )
-}
+const Nav = () => (
+  <Navbar>
+    <Container>
+      <Navbar.Brand href="/">Home</Navbar.Brand>
+      <Navbar.Toggle />
+      <Navbar.Collapse className="justify-content-end">
+        <Navbar.Text>
+          Signed in as: <a href="#login">Black Knight</a>
+        </Navbar.Text>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+)
 
 export default Nav
