@@ -1,16 +1,29 @@
 import React, { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import axios from 'axios'
+
+import Nav from './components/Nav'
+import Home from './components/Home'
+// import Footer from './components/Footer'
 
 function App() {
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get('/api/destinations/') // * <-- replace with your endpoint
+      const { data } = await axios.get('/api/continents/') // * <-- replace with your endpoint
       console.log(data)
     }
     getData()
   })
 
-  return <h1>Hello World</h1>
+  return (
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App
