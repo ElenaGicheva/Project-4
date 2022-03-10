@@ -4,11 +4,7 @@ import axios from 'axios'
 
 import Nav from './components/Nav'
 import Home from './components/Home'
-<<<<<<< HEAD
-import Destinations from './components/pages/Destination'
-=======
 import Destinations from './components/pages/Destinations'
->>>>>>> c6b7683ca8b43a5b6fb965d0eea3a3f7ee4fd35f
 // import Footer from './components/Footer'
 
 function App() {
