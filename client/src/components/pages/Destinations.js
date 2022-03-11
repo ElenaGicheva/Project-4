@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
+
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
 
 const Destinations = () => {
 
   const [continent, setContinent] = useState([])
   const [hasError, setHasError] = useState({ error: false, message: '' })
-  
+  const [destinations, setDestinations] = useState([])
+
   const { continentId } = useParams()
   console.log(continentId)
 
   useEffect(() => {
-    const getDestinations = async () => {
+    const getContinents = async () => {
       try {
         const { data } = await axios.get(`/api/continents/${continentId}/`)
         setContinent(data)
@@ -19,20 +24,46 @@ const Destinations = () => {
         setHasError({ error: true, message: err.message })
       }
     }
-<<<<<<< HEAD:client/src/components/pages/Destination.js
-    getDestinations()
-  }, [])
-
-=======
     getContinents()
   }, [continentId])
-  
+
   useEffect(() => {
     console.log(continent)
   })
->>>>>>> c6b7683ca8b43a5b6fb965d0eea3a3f7ee4fd35f:client/src/components/pages/Destinations.js
+
+  useEffect(() => {
+    const getDestinations = async () => {
+      const { data } = await axios.get('/api/destinations/')
+      setDestinations(data)
+    }
+    getDestinations()
+  }, [])
+
   return (
-    <h2>Continents</h2>
+    <><h2>{continent.name}</h2>
+      <div className="destination-cards">
+        {destinations.length ? destinations.map(destination => {
+          return <Row key={destination.id} xs={1} md={4} className="destinations mb-4">
+            {Array.from({ length: 3 }).map((_, idx) => (
+              <Col>
+                <Link to={`destinations/${destination.id}`}>
+                  <Card className="destination-card" >
+                    <Card.Img variant="bottom" src={destination.image} />
+                    <Card.Body>
+                      <Card.Footer className="text-center">
+                        {destination.name}
+                      </Card.Footer>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+            ))}
+          </Row>
+
+
+          // <Link key={destination.id} to={`destinationPage/${destination.id}`} className='destination-btn'>{destination.name}</Link>
+        }) : ''}
+      </div></>
   )
 }
 
