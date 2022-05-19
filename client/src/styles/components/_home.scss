@@ -1,6 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 .text-center{
   padding: 5%;
   margin: 10px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
 }
 
 .background-image{
@@ -11,6 +18,8 @@
     background-size: cover;
 }
 
-.card-columns{
-
-}
+// .continent-cards{
+//   align-items: flex-start;
+//   display: flex;
+//   flex-direction: column;
+// }
