@@ -14,27 +14,32 @@ const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
+    first_name: '',
+    last_name: '',
     password: '',
-    passwordConfirmation: '',
+    password_confirmation: '',
   })
 
   const [formErrors, setFormErrors] = useState({
     username: '',
     email: '',
+    first_name: '',
+    last_name: '',
     password: '',
-    passwordConfirmation: '',
+    password_confirmation: '',
   })
 
   const handleChange = (e) => {
     const newObj = { ...formData, [e.target.name]: e.target.value }
     setFormData(newObj)
     setFormErrors({ ...formErrors, [e.target.name]: '' })
+    console.log(formData)
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/api/register', formData)
+      await axios.post('/api/auth/register/', formData)
       navigate('/login')
     } catch (err) {
       setFormErrors(err.response.data.errors)
@@ -72,6 +77,34 @@ const Register = () => {
             />
             {formErrors.email && <Form.Text>{formErrors.email}</Form.Text>}
           </Form.Group>
+          {/* First name */}
+          <Form.Group className="mb-2">
+            <Form.Label htmlFor="first_name">First name</Form.Label>
+            <Form.Control
+              onChange={handleChange}
+              type="text"
+              name="first_name"
+              placeholder="First name"
+              defaultValue={formData.first_name}
+            />
+            {formErrors.username && (
+              <Form.Text>{formErrors.first_name}</Form.Text>
+            )}
+          </Form.Group>
+          {/* Last name */}
+          <Form.Group className="mb-2">
+            <Form.Label htmlFor="last_name">Last name</Form.Label>
+            <Form.Control
+              onChange={handleChange}
+              type="text"
+              name="last_name"
+              placeholder="Last name"
+              defaultValue={formData.last_name}
+            />
+            {formErrors.username && (
+              <Form.Text>{formErrors.last_name}</Form.Text>
+            )}
+          </Form.Group>
           {/* Password */}
           <Form.Group className="mb-2">
             <Form.Label htmlFor="password">Password</Form.Label>
@@ -88,15 +121,15 @@ const Register = () => {
           </Form.Group>
           {/* Password Confirmation */}
           <Form.Group className="mb-2">
-            <Form.Label htmlFor="passwordConfirmation">
+            <Form.Label htmlFor="password_confirmation">
               Confirm Password
             </Form.Label>
             <Form.Control
               onChange={handleChange}
               type="password"
-              name="passwordConfirmation"
+              name="password_confirmation"
               placeholder="Confirm Password"
-              defaultValue={formData.passwordConfirmation}
+              defaultValue={formData.password_confirmation}
             />
             {formErrors.passwordConfirmation && (
               <Form.Text>{formErrors.passwordConfirmation}</Form.Text>
