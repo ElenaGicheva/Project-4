@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     const getContinents = async () => {
-      const { data } = await axios.get('/api/continents/')
+      const { data } = await axios.get('/continents/')
       setContinents(data)
     }
     getContinents()
