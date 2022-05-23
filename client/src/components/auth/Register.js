@@ -11,6 +11,7 @@ const Register = () => {
   // navigate
   const navigate = useNavigate()
 
+  const [formErrors, setFormErrors] = useState(false)
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -20,14 +21,12 @@ const Register = () => {
     password_confirmation: '',
   })
 
-  const [formErrors, setFormErrors] = useState({
-    username: '',
-    email: '',
-    first_name: '',
-    last_name: '',
-    password: '',
-    password_confirmation: '',
-  })
+  // const [formErrors, setFormErrors] = useState({
+  //   username: '',
+  //   email: '',
+  //   password: '',
+  //   passwordConfirmation: '',
+  // })
 
   const handleChange = (e) => {
     const newObj = { ...formData, [e.target.name]: e.target.value }
@@ -39,8 +38,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/api/auth/register/', formData)
-      navigate('/login')
+      await axios.post('auth/register/', formData)
+      navigate('login/')
     } catch (err) {
       setFormErrors(err.response.data.errors)
     }
@@ -61,9 +60,9 @@ const Register = () => {
               placeholder="Username"
               defaultValue={formData.username}
             />
-            {formErrors.username && (
+            {/* {formErrors.username &&
               <Form.Text>{formErrors.username}</Form.Text>
-            )}
+            } */}
           </Form.Group>
           {/* Email */}
           <Form.Group className="mb-2">
@@ -75,7 +74,7 @@ const Register = () => {
               placeholder="Email"
               defaultValue={formData.email}
             />
-            {formErrors.email && <Form.Text>{formErrors.email}</Form.Text>}
+            {/* {formErrors.email && <Form.Text>{formErrors.email}</Form.Text>} */}
           </Form.Group>
           {/* First name */}
           <Form.Group className="mb-2">
@@ -115,9 +114,9 @@ const Register = () => {
               placeholder="Password"
               defaultValue={formData.password}
             />
-            {formErrors.password && (
+            {/* {formErrors.password && (
               <Form.Text>{formErrors.password}</Form.Text>
-            )}
+            )} */}
           </Form.Group>
           {/* Password Confirmation */}
           <Form.Group className="mb-2">
@@ -131,9 +130,9 @@ const Register = () => {
               placeholder="Confirm Password"
               defaultValue={formData.password_confirmation}
             />
-            {formErrors.passwordConfirmation && (
+            {/* {formErrors.passwordConfirmation && (
               <Form.Text>{formErrors.passwordConfirmation}</Form.Text>
-            )}
+            )} */}
           </Form.Group>
           {/* Submit */}
           <Form.Group className="text-center mt-4">

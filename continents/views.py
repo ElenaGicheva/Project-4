@@ -8,8 +8,11 @@ from .models import Continent
 from .serializers.common import ContinentSerializer
 from .serializers.populated import PopulatedContinentSerializer
 
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
 
 class ContinentListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def get(self, request):
         continents = Continent.objects.all()
@@ -51,7 +54,6 @@ class ContinentDetailView(APIView):
             return Response(serialized_continent.data, status=status.HTTP_200_OK)
         except Continent.DoesNotExist:
             raise NotFound(detail="Continent not found")
-            
 
     def delete(self, _request, pk):
         continent = self.get_continent(pk=pk)
@@ -72,4 +74,3 @@ class ContinentDetailView(APIView):
 
 # class ContinentDestinationView(APIView):
 #     def get(self, _request, pk):
-

@@ -25,16 +25,16 @@ const Login = () => {
   }
 
   const setTokenToLocalStorage = (token) => {
-    window.localStorage.setItem('teachers-token', token)
+    window.localStorage.setItem('horseTrip-token', token)
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.post('/api/auth/login', formData)
+      const { data } = await axios.post('auth/login/', formData)
       console.log('token', data.token)
       setTokenToLocalStorage(data.token)
-      navigate('/teachers')
+      navigate('/')
     } catch (err) {
       console.log(err.response)
       setFormError(err.response.data.message)
