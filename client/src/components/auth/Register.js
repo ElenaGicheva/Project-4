@@ -15,8 +15,8 @@ const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
-    first_name: '',
-    last_name: '',
+    // first_name: '',
+    // last_name: '',
     password: '',
     password_confirmation: '',
   })
@@ -39,9 +39,10 @@ const Register = () => {
     e.preventDefault()
     try {
       await axios.post('auth/register/', formData)
-      navigate('login/')
+      navigate('/login')
     } catch (err) {
-      setFormErrors(err.response.data.errors)
+      setFormErrors(true)
+      // (err.response.data.errors)
     }
   }
 
@@ -77,7 +78,7 @@ const Register = () => {
             {/* {formErrors.email && <Form.Text>{formErrors.email}</Form.Text>} */}
           </Form.Group>
           {/* First name */}
-          <Form.Group className="mb-2">
+          {/* <Form.Group className="mb-2">
             <Form.Label htmlFor="first_name">First name</Form.Label>
             <Form.Control
               onChange={handleChange}
@@ -89,9 +90,9 @@ const Register = () => {
             {formErrors.username && (
               <Form.Text>{formErrors.first_name}</Form.Text>
             )}
-          </Form.Group>
+          </Form.Group> */}
           {/* Last name */}
-          <Form.Group className="mb-2">
+          {/* <Form.Group className="mb-2">
             <Form.Label htmlFor="last_name">Last name</Form.Label>
             <Form.Control
               onChange={handleChange}
@@ -103,7 +104,7 @@ const Register = () => {
             {formErrors.username && (
               <Form.Text>{formErrors.last_name}</Form.Text>
             )}
-          </Form.Group>
+          </Form.Group> */}
           {/* Password */}
           <Form.Group className="mb-2">
             <Form.Label htmlFor="password">Password</Form.Label>
