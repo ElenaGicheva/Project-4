@@ -18,7 +18,7 @@ const Destinations = () => {
   useEffect(() => {
     const getContinents = async () => {
       try {
-        const { data } = await axios.get(`/api/continents/${continentId}/`)
+        const { data } = await axios.get(`/continents/${continentId}/`)
         setContinent(data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
@@ -28,12 +28,12 @@ const Destinations = () => {
   }, [continentId])
 
   useEffect(() => {
-    console.log(continent)
+    // console.log(continent)
   })
 
   useEffect(() => {
     const getDestinations = async () => {
-      const { data } = await axios.get('/api/destinations/')
+      const { data } = await axios.get('/destinations/')
       setDestinations(data)
     }
     getDestinations()

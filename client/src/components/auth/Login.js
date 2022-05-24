@@ -32,11 +32,11 @@ const Login = () => {
     e.preventDefault()
     try {
       const { data } = await axios.post('auth/login/', formData)
-      console.log('token', data.token)
+      //console.log('token', data.token)
       setTokenToLocalStorage(data.token)
       navigate('/')
     } catch (err) {
-      console.log(err.response)
+      //console.log(err.response)
       setFormError(err.response.data.message)
     }
   }

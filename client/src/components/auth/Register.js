@@ -32,7 +32,7 @@ const Register = () => {
     const newObj = { ...formData, [e.target.name]: e.target.value }
     setFormData(newObj)
     setFormErrors({ ...formErrors, [e.target.name]: '' })
-    console.log(formData)
+    //console.log(formData)
   }
 
   const handleSubmit = async (e) => {

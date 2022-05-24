@@ -6,11 +6,14 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
+
 const Home = () => {
+
   const [continents, setContinents] = useState([])
+
   useEffect(() => {
     const getContinents = async () => {
-      const { data } = await axios.get('/continents/')
+      const { data } = await axios.get('continents/')
       setContinents(data)
     }
     getContinents()

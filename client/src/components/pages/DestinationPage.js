@@ -13,7 +13,7 @@ const DestinationPage = () => {
   useEffect(() => {
     const getDestinations = async () => {
       try {
-        const { data } = await axios.get(`/api/destinations/${destinationId}/`)
+        const { data } = await axios.get(`/destinations/${destinationId}/`)
         setDestination(data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
