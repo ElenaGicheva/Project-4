@@ -46,7 +46,7 @@ const Destinations = () => {
           return <Row key={destination.id} xs={1} md={4} className="destinations mb-4">
             {Array.from({ length: 1 }).map((_, idx) => (
               <Col>
-                <Link to={`destinations/${destination.id}`}>
+                <Link to={`destinations/${destination.id}`} >
                   <Card className="destination-card" >
                     <Card.Img variant="bottom" src={destination.image} />
                     <Card.Body>
