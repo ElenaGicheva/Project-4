@@ -43,7 +43,7 @@ const Destinations = () => {
     <><h2>{continent.name}</h2>
       <div className="destination-cards">
         {destinations.length ? destinations.map(destination => {
-          return <Row key={destination.id} xs={1} md={4} className="destinations mb-4">
+          return <Row key={destination.id} xs={2} md={4} className="destinations mb-4">
             {Array.from({ length: 1 }).map((_, idx) => (
               <Col>
                 <Link to={`destinations/${destination.id}`}>
