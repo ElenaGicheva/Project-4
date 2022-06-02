@@ -65,7 +65,9 @@ const Destinations = () => {
             })}
           </>
           :
-          <p>No Horses here Either</p>
+          <h2 className="text-center">
+            {hasError.error ? 'hmmm... Something went wrong' : 'Loading...'}
+          </h2>
         }
       </Row>
     </Container>

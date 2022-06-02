@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
 
   const [continents, setContinents] = useState([])
+  const [hasError, setHasError] = useState({ error: false, message: '' })
 
   useEffect(() => {
     const getContinents = async () => {
@@ -51,7 +52,9 @@ const Home = () => {
                 })}
               </>
               :
-              <p>No Horses here</p>
+              <h2 className="text-center">
+                {hasError.error ? 'hmmm... Something went wrong' : 'Loading...'}
+              </h2>
             }
           </Row>
         </div>
