@@ -41,6 +41,7 @@ const Destinations = () => {
   }, [])
 
   return (
+<<<<<<< HEAD
     <Container className="mt-4">
       <h2>{continent.name}</h2>
       <Row>
@@ -69,6 +70,32 @@ const Destinations = () => {
         }
       </Row>
     </Container>
+=======
+    <><h2>{continent.name}</h2>
+      <div className="destination-cards">
+        {destinations.length ? destinations.map(destination => {
+          return <Row key={destination.id} xs={2} md={4} className="destinations mb-4">
+            {Array.from({ length: 1 }).map((_, idx) => (
+              <Col>
+                <Link to={`destinations/${destination.id}`} >
+                  <Card className="destination-card" >
+                    <Card.Img variant="bottom" src={destination.image} />
+                    <Card.Body>
+                      <Card.Footer className="text-center">
+                        {destination.name}
+                      </Card.Footer>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+            ))}
+          </Row>
+
+
+          // <Link key={destination.id} to={`destinationPage/${destination.id}`} className='destination-btn'>{destination.name}</Link>
+        }) : ''}
+      </div></>
+>>>>>>> development
   )
 }
 
