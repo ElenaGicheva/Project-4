@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, Link } from 'react-router-dom'
 
+import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -40,30 +41,34 @@ const Destinations = () => {
   }, [])
 
   return (
-    <><h2>{continent.name}</h2>
-      <div className="destination-cards">
-        {destinations.length ? destinations.map(destination => {
-          return <Row key={destination.id} xs={2} md={4} className="destinations mb-4">
-            {Array.from({ length: 1 }).map((_, idx) => (
-              <Col>
-                <Link to={`destinations/${destination.id}`}>
-                  <Card className="destination-card" >
-                    <Card.Img variant="bottom" src={destination.image} />
-                    <Card.Body>
-                      <Card.Footer className="text-center">
-                        {destination.name}
-                      </Card.Footer>
-                    </Card.Body>
-                  </Card>
-                </Link>
-              </Col>
-            ))}
-          </Row>
-
-
-          // <Link key={destination.id} to={`destinationPage/${destination.id}`} className='destination-btn'>{destination.name}</Link>
-        }) : ''}
-      </div></>
+    <Container className="mt-4">
+      <h2>{continent.name}</h2>
+      <Row>
+        {destinations.length ?
+          <>
+            {destinations.map(destination => {
+              console.log(destination)
+              return (
+                <Col xs="2" md="4" className="destinations mb-4">
+                  <Link to={`destinations/${destination.id}`}>
+                    <Card className="destination-card" >
+                      <Card.Img variant="bottom" src={destination.image} />
+                      <Card.Body>
+                        <Card.Footer className="text-center">
+                          {destination.name}
+                        </Card.Footer>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Col>
+              )
+            })}
+          </>
+          :
+          <p>No Horses here Either</p>
+        }
+      </Row>
+    </Container>
   )
 }
 

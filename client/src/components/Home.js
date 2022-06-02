@@ -29,26 +29,31 @@ const Home = () => {
           <p>Start your journey by choosing a continent</p>
         </div>
         <div className="continent-cards mb-3">
-          {continents.length ? continents.map(continent => {
-            // return <Card className="h-100" key={continent.id} to={`destinations/${continent.id}`} className='continent-card'>{continent.name}
-            // </Card>
-            return <Row key={continent.id} xs={1} md={4} className="continents mb-4">
-              {Array.from({ length: 1 }).map((_, idx) => (
-                <Col>
-                  <Link to={`destinations/${continent.id}`}>
-                    <Card className="continent-card" >
-                      <Card.Img variant="bottom" src={continent.image} />
-                      <Card.Body>
-                        <Card.Footer className="text-center">
-                          {continent.name}
-                        </Card.Footer>
-                      </Card.Body>
-                    </Card>
-                  </Link>
-                </Col>
-              ))}
-            </Row>
-          }) : ''}
+          <Row>
+            {continents.length ?
+              <>
+                {continents.map(continent => {
+                  console.log(continent)
+                  return (
+                    <Col xs="1" md="4" className="continents mb-4">
+                      <Link to={`destinations/${continent.id}`}>
+                        <Card className="continent-card" >
+                          <Card.Img variant="bottom" src={continent.image} />
+                          <Card.Body>
+                            <Card.Footer className="text-center">
+                              {continent.name}
+                            </Card.Footer>
+                          </Card.Body>
+                        </Card>
+                      </Link>
+                    </Col>
+                  )
+                })}
+              </>
+              :
+              <p>No Horses here</p>
+            }
+          </Row>
         </div>
       </div>
     </div>
