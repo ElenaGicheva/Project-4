@@ -1,7 +1,7 @@
 import { Buffer } from 'buffer'
 
 export const getTokenFromLocalStorage = () => {
-  return window.localStorage.getItem('teachers-token')
+  return window.localStorage.getItem('horseTrip-token')
 }
 
 export const getPayload = () => {

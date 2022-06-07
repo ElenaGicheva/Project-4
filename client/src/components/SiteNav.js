@@ -6,29 +6,17 @@ import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
+import { getPayload } from './helpers/auth'
+
 import Logo from '../images/Logo.png'
 import { userIsAuthenticated } from './helpers/auth'
 
 
 const SiteNav = () => {
 
-  const ref = useRef()
+  console.log(userIsAuthenticated())
+
   const navigate = useNavigate()
-
-  const [currentUser, setCurrentUser] = useState({})
-
-  // useEffect(() => {
-  //   const getCurrentUser = async () => {
-  //     try {
-  //       const payload = getPayload()
-  //       const { data } = await axios.get(`/api/authentication/$${payload.sub}`)
-  //       setCurrentUser(data)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   getCurrentUser()
-  // }, [])
 
   const handleLogout = () => {
     window.localStorage.removeItem('horseTrip-token')
@@ -41,8 +29,18 @@ const SiteNav = () => {
       <Container>
         <Navbar.Brand href="/"><img className='main-logo' src={Logo} alt='horse-logo' /></Navbar.Brand>
         <Nav className="justify-content-end">
-          <Nav.Link href="/register">Register</Nav.Link>
-          <Nav.Link href="/login">Login</Nav.Link>
+          {userIsAuthenticated() ?
+            <>
+              <Nav.Item onClick={handleLogout}>
+                <span>Logout</span>
+              </Nav.Item>
+            </>
+            :
+            <>
+              <Nav.Link href="/register">Register</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+            </>
+          }
         </Nav>
       </Container>
     </Navbar>

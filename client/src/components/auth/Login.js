@@ -36,7 +36,7 @@ const Login = () => {
       setTokenToLocalStorage(data.token)
       navigate('/')
     } catch (err) {
-      //console.log(err.response)
+      console.log(err.response)
       setFormError(err.response.data.message)
     }
   }
@@ -54,10 +54,7 @@ const Login = () => {
           <Form.Group className='mb-2'>
             <Form.Label htmlFor="password">Password</Form.Label>
             <Form.Control onChange={handleChange} type="password" name="password" placeholder='Password' defaultValue={formData.password} />
-          </Form.Group>
-          {formError && <Form.Text>{formError}</Form.Text>}
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Keep me logged in" />
+            {formError && <Form.Text>{formError}</Form.Text>}
           </Form.Group>
           <Form.Group className='mt-4 text-left'>
             <Button variant="success" type="submit">Log in</Button>

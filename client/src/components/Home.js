@@ -23,10 +23,10 @@ const Home = () => {
     <div className="site-wrapper">
       <div className="text-center">
         <div className="background-image">
-          <h2 className="display-2">
+          <h1 className="display-1"><em>
             Horse Outdoors
-          </h2>
-          <h4>Discover new scenery for your horse riding vacations.</h4>
+          </em></h1>
+          <h3>Discover new scenery for your horse riding vacations.</h3>
           <p>Start your journey by choosing a continent</p>
         </div>
         <div className="continent-cards mb-3">
@@ -34,15 +34,16 @@ const Home = () => {
             {continents.length ?
               <>
                 {continents.map(continent => {
+                  const { name, id, image } = continent
                   console.log(continent)
                   return (
-                    <Col xs="1" md="4" className="continents mb-4">
-                      <Link to={`destinations/${continent.id}`}>
+                    <Col key={id} xs="1" md="3" className="continents mb-4">
+                      <Link to={`destinations/${id}`}>
                         <Card className="continent-card" >
-                          <Card.Img variant="bottom" src={continent.image} />
+                          <Card.Img variant="bottom" src={image} />
                           <Card.Body>
                             <Card.Footer className="text-center">
-                              {continent.name}
+                              {name}
                             </Card.Footer>
                           </Card.Body>
                         </Card>

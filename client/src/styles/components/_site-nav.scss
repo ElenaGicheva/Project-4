@@ -1,0 +1,13 @@
+.nav-item{
+  color: grey;
+    cursor: pointer;
+    &:hover{
+      color: lightgrey
+    }
+  }
+
+  .container{
+    position: relative;
+    justify-content: space-between;
+    // margin: 0 2vh 0 2vh;
+  }

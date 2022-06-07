@@ -19,7 +19,7 @@ const Destinations = () => {
   useEffect(() => {
     const getContinents = async () => {
       try {
-        const { data } = await axios.get(`/continents/${continentId}/`)
+        const { data } = await axios.get(`/continents/${continentId}`)
         setContinent(data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
@@ -47,15 +47,16 @@ const Destinations = () => {
         {destinations.length ?
           <>
             {destinations.map(destination => {
+              const { name, id, image } = destination
               console.log(destination)
               return (
-                <Col xs="2" md="4" className="destinations mb-4">
-                  <Link to={`destinations/${destination.id}`}>
+                <Col key={id} xs="2" md="4" className="destinations mb-4">
+                  <Link to={`destinations/${id}`}>
                     <Card className="destination-card" >
-                      <Card.Img variant="bottom" src={destination.image} />
+                      <Card.Img variant="bottom" src={image} />
                       <Card.Body>
                         <Card.Footer className="text-center">
-                          {destination.name}
+                          {name}
                         </Card.Footer>
                       </Card.Body>
                     </Card>

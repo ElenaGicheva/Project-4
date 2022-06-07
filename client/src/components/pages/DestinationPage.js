@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 
-import { getTokenFromLocalStorage, getPayload, userIsAuthenticated } from '../helpers/auth'
+import { getTokenFromLocalStorage, userIsAuthenticated } from '../helpers/auth'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -34,32 +34,33 @@ const DestinationPage = () => {
     getSingleDestination()
   }, [destinationId])
 
-  useEffect(() => {
-    const getCurrentUser = async () => {
-      try {
-        const payload = getPayload()
-        const { data } = await axios.get(`/api/authentication/${payload.sub}`)
-        setCurrentUser(data)
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    getCurrentUser()
-  }, [destination])
+
+  // useEffect(() => {
+  //   const getCurrentUser = async () => {
+  //     try {
+  //       const payload = getPayload()
+  //       const { data } = await axios.get(`/api/review/${payload.sub}`)
+  //       setCurrentUser(data)
+  //     } catch (err) {
+  //       console.log(err)
+  //     }
+  //   }
+  //   getCurrentUser()
+  // }, [destination])
 
   const handleReviewInputChange = (e) => {
-    setReviewInput({ ...reviewInput, text: `${currentUser.username} says: ${e.target.value}` })
+    setReviewInput({ ...reviewInput, [e.target.name]: '' })
   }
 
   const handleReviewSubmit = async () => {
     !userIsAuthenticated() && navigate('/login')
     try {
-      await axios.post(`/api/destinations/${destination.id}/reviews`, reviewInput, {
+      await axios.post(`/api/destinations/${destinationId}/reviews/`, reviewInput, {
         header: {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`
         }
       })
-      const { data } = await axios.get(`/api/destinations/${destinationId}`)
+      const { data } = await axios.get(`/api/destinations/${destinationId}/`)
       setReviewInput(data)
       document.getElementById('text-to-reset').value = ''
       setReviewInput({
@@ -117,8 +118,8 @@ const DestinationPage = () => {
                 {destination.reviews.length === 0 ?
                   <p>No reviews yet</p>
                   :
-                  destination.reviews.slice(0).reverse().map((review, index) =>
-                    <div className="review-container" key={index} >
+                  destination.reviews.slice(0).reverse().map((review, id) =>
+                    <div className="review-container" key={id} >
                       <p>{review.text}</p>
                     </div>
                   )

@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 
 import SiteNav from './components/SiteNav'
 import Home from './components/Home'
@@ -11,13 +11,13 @@ import Login from './components/auth/Login'
 // import Footer from './components/Footer'
 
 function App() {
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios.get('api/HorseTrips/') // * <-- replace with your endpoint
-      console.log(data)
-    }
-    getData()
-  })
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const { data } = await axios.get('api/HorseTrips/') // * <-- replace with your endpoint
+  //     console.log(data)
+  //   }
+  //   getData()
+  // })
 
   return (
     <div className="site-wrapper">
