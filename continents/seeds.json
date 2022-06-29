@@ -4,71 +4,47 @@
   "pk": 1,
   "fields": {
     "name": "Europe",
-    "image": "https://wallpapershome.com/images/pages/pic_v/17766.jpg"
+    "image": "https://photos.tpn.to/jh/sr/ti/ko/653x490.jpg"
   }
 },
 {
   "model": "continents.continent",
   "pk": 2,
   "fields": {
-    "name": "Europe",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
+    "name": "Africa",
+    "image": "https://ampascachi.com/images/blog/vacaciones-caballo-mundo/africa/namibia/african-horse-safaris.jpg"
   }
 },
 {
   "model": "continents.continent",
   "pk": 3,
   "fields": {
-    "name": "Europe",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
+    "name": "Asia",
+    "image": "https://img.freepik.com/free-photo/asian-traveling-woman-riding-horse-take-care-with-his-boy-friend-sea-beach_55877-637.jpg?w=2000"
   }
 },
 {
   "model": "continents.continent",
   "pk": 4,
   "fields": {
-    "name": "Europe",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
+    "name": "North America",
+    "image": "https://www.equus-journeys.com/photos/1800x1200/explore-the-canyons-on-horseback-in-utah-1873.jpg"
   }
 },
 {
   "model": "continents.continent",
   "pk": 5,
   "fields": {
-    "name": "Europe",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
+    "name": "South America",
+    "image": "https://i.pinimg.com/736x/1e/92/16/1e92168a39a065c31bc6ab856a4df07b.jpg"
   }
 },
 {
   "model": "continents.continent",
   "pk": 6,
   "fields": {
-    "name": "Europe",
-    "image": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_1100,c_fill,g_auto,h_619,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191122180447-horse-riding-holiday-horse-water-1.jpg"
-  }
-},
-{
-  "model": "continents.continent",
-  "pk": 7,
-  "fields": {
-    "name": "Africa",
-    "image": "https://i.pinimg.com/originals/47/42/e4/4742e406bce6ca8bd53b4f6ec362835d.jpg"
-  }
-},
-{
-  "model": "continents.continent",
-  "pk": 9,
-  "fields": {
-    "name": "Americas",
-    "image": "https://r1.ilikewallpaper.net/iphone-x-wallpapers/download/96084/Rio-De-Janeiro-Cityscape-Brazil-Sunset-iphone-x-wallpaper-ilikewallpaper_com.jpg"
-  }
-},
-{
-  "model": "continents.continent",
-  "pk": 13,
-  "fields": {
-    "name": "Asia and Astralasia",
-    "image": "https://i.pinimg.com/736x/e4/bd/b8/e4bdb83397d2859e1a8513b30f63c4ef--south-wales-australia-travel.jpg"
+    "name": "Oceania",
+    "image": "https://www.equus-journeys.com/photos/1800x1200/new-zeland-bandeau-equus-journeys-6522.jpg"
   }
 }
 ]

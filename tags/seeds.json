@@ -8,30 +8,79 @@
 },
 {
   "model": "tags.tag",
-  "pk": 6,
+  "pk": 2,
   "fields": {
-    "tag": "Trail"
+    "tag": "Trails"
   }
 },
 {
   "model": "tags.tag",
-  "pk": 7,
-  "fields": {
-    "tag": "Family"
-  }
-},
-{
-  "model": "tags.tag",
-  "pk": 8,
+  "pk": 3,
   "fields": {
     "tag": "Safari"
   }
 },
 {
   "model": "tags.tag",
-  "pk": 9,
+  "pk": 4,
   "fields": {
     "tag": "Desert"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 5,
+  "fields": {
+    "tag": "Historical"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 6,
+  "fields": {
+    "tag": "Open Space"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 7,
+  "fields": {
+    "tag": "Beach"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 8,
+  "fields": {
+    "tag": "Landscape"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 9,
+  "fields": {
+    "tag": "Forests"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 10,
+  "fields": {
+    "tag": "Sunset"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 11,
+  "fields": {
+    "tag": "Desert"
+  }
+},
+{
+  "model": "tags.tag",
+  "pk": 12,
+  "fields": {
+    "tag": "Mountains"
   }
 }
 ]

@@ -35,18 +35,19 @@ class ReviewListView(APIView):
             print(serialized_review.errors)
             return Response({"detail": str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
             # e is a type: AsssertionError needed to convert to string as Assertion error can't convert into JSON, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
-        # except:
-        #     return Response("Unprocessable Entity", status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+        except:
+            return Response({"detail": "Unprocessable Entity"}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 
 class ReviewDetailView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
+
     def delete(self, request, pk):
         print('USER --->', request.user.id)
         try:
             review_to_delete = Review.object.get(pk=pk)
             if review_to_delete.owner != request.user:
-              raise PermissionDenied(detail='Unauthorised')
+                raise PermissionDenied(detail='Unauthorised')
             # If it does find a review, this now means it will delete it
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Review.DoesNotExist:

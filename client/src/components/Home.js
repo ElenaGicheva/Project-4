@@ -19,6 +19,7 @@ const Home = () => {
     }
     getContinents()
   }, [])
+
   return (
     <div className="site-wrapper">
       <div className="text-center">
@@ -37,7 +38,7 @@ const Home = () => {
                   const { name, id, image } = continent
                   console.log(continent)
                   return (
-                    <Col key={id} xs="1" md="3" className="continents mb-4">
+                    <Col key={id} xs="1" md="4" className="continents mb-4">
                       <Link to={`destinations/${id}`}>
                         <Card className="continent-card" >
                           <Card.Img variant="bottom" src={image} />

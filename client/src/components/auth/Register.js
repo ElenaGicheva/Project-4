@@ -11,7 +11,7 @@ const Register = () => {
   // navigate
   const navigate = useNavigate()
 
-  const [formErrors, setFormErrors] = useState(false)
+  // const [formErrors, setFormErrors] = useState(false)
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -21,12 +21,12 @@ const Register = () => {
     password_confirmation: '',
   })
 
-  // const [formErrors, setFormErrors] = useState({
-  //   username: '',
-  //   email: '',
-  //   password: '',
-  //   passwordConfirmation: '',
-  // })
+  const [formErrors, setFormErrors] = useState({
+    username: '',
+    email: '',
+    password: '',
+    passwordConfirmation: '',
+  })
 
   const handleChange = (e) => {
     const newObj = { ...formData, [e.target.name]: e.target.value }
@@ -41,7 +41,7 @@ const Register = () => {
       await axios.post('auth/register/', formData)
       navigate('/login')
     } catch (err) {
-      setFormErrors(true)
+      setFormErrors({ ...formErrors, ...err.response.data.errors })
       // (err.response.data.errors)
     }
   }
@@ -59,11 +59,10 @@ const Register = () => {
               type="text"
               name="username"
               placeholder="Username"
-              defaultValue={formData.username}
             />
-            {/* {formErrors.username &&
+            {formErrors.username &&
               <Form.Text>{formErrors.username}</Form.Text>
-            } */}
+            }
           </Form.Group>
           {/* Email */}
           <Form.Group className="mb-2">

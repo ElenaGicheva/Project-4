@@ -12,9 +12,12 @@ const Destinations = () => {
   const [continent, setContinent] = useState([])
   const [hasError, setHasError] = useState({ error: false, message: '' })
   const [destinations, setDestinations] = useState([])
+  const [filtDest, setFiltDest] = useState([])
+  const [newFilterDest, setNewFilterDest] = useState([])
+
 
   const { continentId } = useParams()
-  console.log(continentId)
+  // console.log(continentId)
 
   useEffect(() => {
     const getContinents = async () => {
@@ -28,9 +31,6 @@ const Destinations = () => {
     getContinents()
   }, [continentId])
 
-  useEffect(() => {
-    // console.log(continent)
-  })
 
   useEffect(() => {
     const getDestinations = async () => {
@@ -40,38 +40,56 @@ const Destinations = () => {
     getDestinations()
   }, [])
 
+  useEffect(() => {
+    if (destinations.length) {
+      const filteredDest = []
+      destinations.forEach(filterDest => {
+        filteredDest.indexOf(filterDest) === -1 && filteredDest.push(filterDest)
+      })
+      setFiltDest(filteredDest)
+    }
+  }, [destinations])
+
+  const updatedFilteredDest = (e) => {
+    const filteredContDest = destinations.filter(destination => destination.continent.id === e.target.value)
+    setNewFilterDest(filteredContDest)
+  }
+
   return (
-    <Container className="mt-4">
-      <h2>{continent.name}</h2>
-      <Row>
-        {destinations.length ?
-          <>
-            {destinations.map(destination => {
-              const { name, id, image } = destination
-              console.log(destination)
-              return (
-                <Col key={id} xs="2" md="4" className="destinations mb-4">
-                  <Link to={`destinations/${id}`}>
-                    <Card className="destination-card" >
-                      <Card.Img variant="bottom" src={image} />
-                      <Card.Body>
-                        <Card.Footer className="text-center">
-                          {name}
-                        </Card.Footer>
-                      </Card.Body>
-                    </Card>
-                  </Link>
-                </Col>
-              )
-            })}
-          </>
-          :
-          <h2 className="text-center">
-            {hasError.error ? 'hmmm... Something went wrong' : 'Loading...'}
-          </h2>
-        }
-      </Row>
-    </Container>
+    <>
+      <div className="cont-name">
+        <img className="img" src={continent.image} alt="" />
+        <div className="bottom-left"><h2><em>{continent.name}</em></h2></div>
+      </div>
+      <Container className="mt-4" onChange={updatedFilteredDest}>
+        <Row>
+          {filtDest.map((filterDest, i) => <option key={i} value={filterDest}></option>) ?
+            <>
+              {(newFilterDest.length ? newFilterDest : destinations).map((filtDest, i) => {
+                // console.log(filterDest)
+                return (
+                  <Col key={i} xs="2" md="4" className="destinations mb-4">
+                    <Link to={`destinations/${filtDest.id}`}>
+                      <Card className="destination-card">
+                        <Card.Img variant="bottom" src={filtDest.image} />
+                        <Card.Body>
+                          <Card.Footer className="text-center">
+                            {filtDest.name}
+                          </Card.Footer>
+                        </Card.Body>
+                      </Card>
+                    </Link>
+                  </Col>
+                )
+              })}
+            </>
+            :
+            <h2 className="text-center">
+              {hasError.error ? 'hmmm... Something went wrong' : 'Loading...'}
+            </h2>}
+        </Row>
+      </Container>
+    </>
   )
 }
 

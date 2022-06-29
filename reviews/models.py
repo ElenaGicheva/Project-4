@@ -18,12 +18,11 @@ class Review(models.Model):
         on_delete=models.CASCADE
     )
     owner = models.ForeignKey(
-      'jwt_auth.User',
-      related_name='reviews',
-      on_delete=models.CASCADE
+        'jwt_auth.User',
+        related_name='reviews',
+        on_delete=models.CASCADE
     )
 
-
     def __str__(self):
-        return f"{self.description}"
-      # return f"{self.description} ({self.created_at})"
+        return f"{self.description} {self.text}"
+        # return f"{self.description} ({self.created_at})"

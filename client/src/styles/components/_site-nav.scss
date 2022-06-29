@@ -1,3 +1,17 @@
+.nav{
+  width: 100%
+}
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  max-width: 100%;
+  padding: 0;
+  // margin: 0;
+  align-items: stretch;
+}
+
 .nav-item{
   color: grey;
     cursor: pointer;
@@ -6,8 +20,13 @@
     }
   }
 
-  .container{
-    position: relative;
+  .navbar{
+    height: 7vh;
+    color: whitesmoke;
     justify-content: space-between;
-    // margin: 0 2vh 0 2vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    img{
+      max-width: 5vh;
+    }
   }

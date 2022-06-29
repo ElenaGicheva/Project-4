@@ -32,9 +32,9 @@ class LoginView(APIView):
         try:
             user_to_login = User.objects.get(email=request.data.get('email'))
         except User.DoesNotExist:
-            return PermissionDenied(details='Unauthorised')
+            return PermissionDenied(detail='Unauthorised')
         if not user_to_login.check_password(request.data.get('password')):
-            return PermissionDenied(details='Unauthorised')
+            return PermissionDenied(detail='Unauthorised')
         dt = datetime.now() + timedelta(days=14)
         print('DT --->', int(dt.strftime('%s')))
         token = jwt.encode({

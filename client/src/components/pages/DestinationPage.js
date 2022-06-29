@@ -19,8 +19,9 @@ const DestinationPage = () => {
     text: ''
   })
 
+  const { id } = useParams()
   const { destinationId } = useParams()
-  console.log(destinationId)
+  // console.log(destinationId)
 
   useEffect(() => {
     const getSingleDestination = async () => {
@@ -49,17 +50,19 @@ const DestinationPage = () => {
   // }, [destination])
 
   const handleReviewInputChange = (e) => {
-    setReviewInput({ ...reviewInput, [e.target.name]: '' })
+    setReviewInput({ ...reviewInput, text: e.target.value })
   }
 
   const handleReviewSubmit = async () => {
     !userIsAuthenticated() && navigate('/login')
     try {
-      await axios.post(`/api/destinations/${destinationId}/reviews/`, reviewInput, {
+      await axios.post(`/reviews/`, reviewInput, {
         header: {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`
         }
+
       })
+      console.log(getTokenFromLocalStorage)
       const { data } = await axios.get(`/api/destinations/${destinationId}/`)
       setReviewInput(data)
       document.getElementById('text-to-reset').value = ''
@@ -73,72 +76,85 @@ const DestinationPage = () => {
 
 
   return (
-    <Container className="eachDest">
+    <Container>
       {destination ?
-        <div>
-          <img className="bk-img" src={destination.background_image} alt={destination.name} />
-          <h1>{destination.name}</h1>
-          <hr />
-          <Row>
-            <Col className="image">
-              <img className="img" src={destination.image} alt={destination.name} />
-              <hr />
-            </Col>
-            <Col className="descriptions">
-              <h5>Price: £{destination.price}</h5>
-              <h5>Ability Level: {destination.ability_level}</h5>
-              <h5>Duration: {destination.duration}</h5>
-              <hr />
-              <h5>Descripton: </h5>
-              <p>{destination.description}</p>
-              <hr />
-            </Col>
-          </Row>
-          <Row>
-            <div className='tags'>
-              <h4><em>Tags</em></h4>
-              <ul className='tags-display'>
-                {destination.tags.map(tag => {
-                  return <li>{tag}</li>
-                })}
-              </ul>
-              <hr />
-            </div>
-          </Row>
-          <Row>
-            <div className="reviews">
-              <h4>Reviews</h4>
-              <div className="comments">
-                <textarea rows='7' cols='30' maxLength='300' placeholder='How was your holiday?' onChange={handleReviewInputChange} id='text-to-reset'></textarea>
+        <>
+          <div className="eachDest">
+            <img src={destination.background_image} alt={destination.name} />
+            <div className="bottom-left"><h1>{destination.name}</h1></div>
+            {/* <hr /> */}
+          </div>
+          <div className="after-bk">
+            <Row>
+              <Col className="image">
+                <img className="img" src={destination.image} alt={destination.name} />
+                {/* <hr /> */}
+              </Col>
+              <Col className="descriptions">
+                <h5>Price: <em>£{destination.price}</em></h5>
+                <h5>Ability Level: <em>{destination.ability_level}</em></h5>
+                <h5>Duration: <em>{destination.duration} days</em></h5>
+                <hr />
+                <h5>Descripton: </h5>
+                <p>{destination.description}</p>
+                {/* <hr /> */}
+              </Col>
+            </Row>
+            <Row>
+              <div className='tags'>
+                <hr />
+                <h4><em>Tags</em></h4>
+                <ul className='tags-display'>
+                  {destination.tags.length === 0 ?
+                    <p>No tags yet</p>
+                    :
+                    destination.tags.map(tag => {
+                      return (
+                        <div className="tags-container" key={tag}>
+                          <li>{tag.tag}</li>
+                        </div>
+                      )
+                    })}
+                </ul>
+                {/* <hr /> */}
               </div>
-              <div className='submit-btn'>
-                <button id='s-btn' onClick={handleReviewSubmit}>Submit</button>
-              </div>
-              <div className='review-display'>
-                {destination.reviews.length === 0 ?
-                  <p>No reviews yet</p>
-                  :
-                  destination.reviews.slice(0).reverse().map((review, id) =>
-                    <div className="review-container" key={id} >
+            </Row>
+            <Row>
+              <div className="reviews">
+                <h4>Reviews</h4>
+                <div className="comments">
+                  <textarea rows='5' cols='30' maxLength='300' placeholder='How was your holiday?' onChange={handleReviewInputChange} id='text-to-reset'></textarea>
+                </div>
+                <div className='submit-btn'>
+                  <button id='s-btn' onClick={handleReviewSubmit}>Submit</button>
+                </div>
+                <div className='review-display'>
+                  {destination.reviews.length === 0 ?
+                    <p>No reviews yet</p>
+                    :
+                    destination.reviews.slice(0).reverse().map((review, id) => <div className="review-container" key={id}>
+                      <h6>{review.description}</h6>
                       <p>{review.text}</p>
+                      <p>{review.created_at}</p>
                     </div>
-                  )
-                }
+                    )}
+                </div>
               </div>
-            </div>
-            <hr />
-          </Row>
-          <Row>
-            <div className="enquire">
-              <button>Enquire Now</button>
-            </div>
-          </Row>
-        </div>
+              <hr />
+            </Row>
+            <Row>
+              <div className="enquire">
+                <button>Enquire Now</button>
+              </div>
+            </Row>
+          </div>
+        </>
         :
         <h2 className="text-center">
           {hasError.error ? 'hmmm... Something went wrong' : 'Loading...'}
         </h2>
       }
+
     </Container>
 
   )

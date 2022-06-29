@@ -1,31 +1,40 @@
-// * {
-//   box-sizing: border-box;
-// }
-.navbar{
-  height: 7vh;
-  color: whitesmoke;
-  img{
-    max-width: 5vh;
-  }
-}
-
 .background-image{
     background-image: url('https://cdn2.psychologytoday.com/assets/styles/manual_crop_1_91_1_1528x800/public/field_blog_entry_teaser_image/2021-06/shutterstock_1170866035.jpg?itok=NkvBW--5');
-    padding: 5%;
-    color:rgb(233, 197, 38);
+    padding: 90px;
+    color:rgb(255, 255, 255);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    justify-content: space-between;
+    // justify-content: space-between;
     opacity: 0.9;
+    height: 400px;
 }
+
+.display-1{
+  font-size: 100px;
+}
+
+h3{
+  justify-content: space-between;
+  padding-top: 3%;
+  }
+
 .card-img-bottom{
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
+  max-height: 22vh;
+  max-width: 50vh;
+  min-height: 22vh;
 }
 
 .continent-cards{
   padding: 5%;
+  justify-content: center;
+  // margin: 0;
+  a{
+    justify-content: flex-end;
+    align-items: center;
+  }
   .card{
     &:hover{
       border: 3px solid black;
@@ -37,20 +46,29 @@
 .card-body{
   margin: 0;
   padding: 0;
-.card-footer{
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  color: black;
+  
+}
+.text-center.card-footer{
   background-color: lightgrey;
   text-decoration: none;
+  border-bottom-left-radius: 8%;
+  border-bottom-right-radius: 8%;
+}
   a:link{
     text-decoration: none;
+
   }
-  a:visited{
-    text-decoration: none;
+
+  .mb-3{
+    background-color: whitesmoke;
   }
-  a:hover{
-    text-decoration: none;
-  }
-  a:active{
-    text-decoration: none;
-  }
-}
+
+
+.card{
+  max-width: 40vh;
+  max-height: 70vh;
+  
 }
