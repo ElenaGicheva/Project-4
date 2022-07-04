@@ -15,8 +15,8 @@ const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
-    // first_name: '',
-    // last_name: '',
+    first_name: '',
+    last_name: '',
     password: '',
     password_confirmation: '',
   })
@@ -24,6 +24,8 @@ const Register = () => {
   const [formErrors, setFormErrors] = useState({
     username: '',
     email: '',
+    first_name: '',
+    last_name: '',
     password: '',
     passwordConfirmation: '',
   })
@@ -51,89 +53,91 @@ const Register = () => {
       <Container>
         <Form onSubmit={handleSubmit} className="mt-4">
           <h2>Register</h2>
-          {/* Username */}
-          <Form.Group className="mb-2">
-            <Form.Label htmlFor="username">Username</Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              type="text"
-              name="username"
-              placeholder="Username"
-            />
-            {formErrors.username &&
-              <Form.Text>{formErrors.username}</Form.Text>
-            }
-          </Form.Group>
-          {/* Email */}
-          <Form.Group className="mb-2">
-            <Form.Label htmlFor="email">Email Address</Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              type="email"
-              name="email"
-              placeholder="Email"
-              defaultValue={formData.email}
-            />
-            {/* {formErrors.email && <Form.Text>{formErrors.email}</Form.Text>} */}
-          </Form.Group>
-          {/* First name */}
-          {/* <Form.Group className="mb-2">
-            <Form.Label htmlFor="first_name">First name</Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              type="text"
-              name="first_name"
-              placeholder="First name"
-              defaultValue={formData.first_name}
-            />
-            {formErrors.username && (
-              <Form.Text>{formErrors.first_name}</Form.Text>
-            )}
-          </Form.Group> */}
-          {/* Last name */}
-          {/* <Form.Group className="mb-2">
-            <Form.Label htmlFor="last_name">Last name</Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              type="text"
-              name="last_name"
-              placeholder="Last name"
-              defaultValue={formData.last_name}
-            />
-            {formErrors.username && (
-              <Form.Text>{formErrors.last_name}</Form.Text>
-            )}
-          </Form.Group> */}
-          {/* Password */}
-          <Form.Group className="mb-2">
-            <Form.Label htmlFor="password">Password</Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              type="password"
-              name="password"
-              placeholder="Password"
-              defaultValue={formData.password}
-            />
-            {/* {formErrors.password && (
-              <Form.Text>{formErrors.password}</Form.Text>
-            )} */}
-          </Form.Group>
-          {/* Password Confirmation */}
-          <Form.Group className="mb-2">
-            <Form.Label htmlFor="password_confirmation">
-              Confirm Password
-            </Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              type="password"
-              name="password_confirmation"
-              placeholder="Confirm Password"
-              defaultValue={formData.password_confirmation}
-            />
-            {/* {formErrors.passwordConfirmation && (
-              <Form.Text>{formErrors.passwordConfirmation}</Form.Text>
-            )} */}
-          </Form.Group>
+          <div className="form-fields">
+            {/* Username */}
+            <Form.Group className="mb-2">
+              <Form.Label htmlFor="username">Username</Form.Label>
+              <Form.Control
+                onChange={handleChange}
+                type="text"
+                name="username"
+                placeholder="Username"
+              />
+              {formErrors.username &&
+                <Form.Text>{formErrors.username}</Form.Text>
+              }
+            </Form.Group>
+            {/* Email */}
+            <Form.Group className="mb-2">
+              <Form.Label htmlFor="email">Email Address</Form.Label>
+              <Form.Control
+                onChange={handleChange}
+                type="email"
+                name="email"
+                placeholder="E.g. horses@email.com"
+                defaultValue={formData.email}
+              />
+              {formErrors.email && <Form.Text>{formErrors.email}</Form.Text>}
+            </Form.Group>
+            {/* First name */}
+            {/* <Form.Group className="mb-2">
+              <Form.Label htmlFor="first_name">First name</Form.Label>
+              <Form.Control
+                onChange={handleChange}
+                type="text"
+                name="first_name"
+                placeholder="First name"
+                defaultValue={formData.first_name}
+              />
+              {formErrors.username && (
+                <Form.Text>{formErrors.first_name}</Form.Text>
+              )}
+            </Form.Group> */}
+            {/* Last name */}
+            {/* <Form.Group className="mb-2">
+              <Form.Label htmlFor="last_name">Last name</Form.Label>
+              <Form.Control
+                onChange={handleChange}
+                type="text"
+                name="last_name"
+                placeholder="Last name"
+                defaultValue={formData.last_name}
+              />
+              {formErrors.username && (
+                <Form.Text>{formErrors.last_name}</Form.Text>
+              )}
+            </Form.Group> */}
+            {/* Password */}
+            <Form.Group className="mb-2">
+              <Form.Label htmlFor="password">Password</Form.Label>
+              <Form.Control
+                onChange={handleChange}
+                type="password"
+                name="password"
+                placeholder="Password"
+                defaultValue={formData.password}
+              />
+              {formErrors.password && (
+                <Form.Text>{formErrors.password}</Form.Text>
+              )}
+            </Form.Group>
+            {/* Password Confirmation */}
+            <Form.Group className="mb-2">
+              <Form.Label htmlFor="password_confirmation">
+                Confirm Password
+              </Form.Label>
+              <Form.Control
+                onChange={handleChange}
+                type="password"
+                name="password_confirmation"
+                placeholder="Confirm Password"
+                defaultValue={formData.password_confirmation}
+              />
+              {formErrors.passwordConfirmation && (
+                <Form.Text>{formErrors.passwordConfirmation}</Form.Text>
+              )}
+            </Form.Group>
+          </div>
           {/* Submit */}
           <Form.Group className="text-center mt-4">
             <Button variant="success" type="submit">

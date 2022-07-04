@@ -38,17 +38,12 @@ h1{
 h5{
   display: block;
   // justify-content: flex-end;
-  
 }
 
 .after-bk{
-  order: 1 2;
 .img{
   width :75vh;
   // border-right: 1px solid black;
-}
-.descriptions{
-  flex-grow: 2;
 }
 }
 
@@ -67,6 +62,11 @@ h5{
   }
   .submit-btn{
     padding-bottom: 2vh;
+    button{
+      background-color: rgb(25, 135, 84);
+      border-radius: 8%;
+      color: white;
+    }
   }
   textarea{
     width: 100%
@@ -75,4 +75,86 @@ h5{
 
 .enquire{
   padding-bottom: 2.5%;
+  button{
+  background-color: rgb(25, 135, 84);
+  border-radius: 8%;
+  color:  white;
+}
+}
+
+.body{
+  display: flex;
+  flex-direction: nowrap;
+  align-items: center;
+}
+
+.img-details{
+  display: flex;
+  padding: 0 12px;
+  padding-bottom: 1.5em;
+}
+
+@media(max-width:575px){
+  .eachDest img{
+    height: 15em;
+  }
+  h1{
+    font-size: 2.5em;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media(max-width: 575px){
+  .container{
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 100%;
+  }
+    .main-logo{
+      max-height: 1.7em;
+    }
+    .navbar{
+      display: flex;
+      align-items: center;
+      align-content: space-around;
+    }
+    .navbar-nav{
+      display: flex;
+      flex-direction: row;
+      .nav-link{
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+      }
+    }
+  }
+
+  @media(max-width: 825px){
+    .row {
+      justify-content: center;
+      flex-direction: column;
+    }
+    .img-details{
+      display: flex;
+      flex-direction: column-reverse;
+      flex-wrap: wrap;
+    }
+    .after-bk{
+      .img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        justify-content: center;
+        align-items: center;
+      }
+    h5{
+      font-weight: bold;
+    }
+  }
+  .eachDest img{
+      height: 20em;
+  }
 }

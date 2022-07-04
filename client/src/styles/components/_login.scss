@@ -1,0 +1,22 @@
+h2 {
+  color:rgb(233, 197, 38);
+  justify-content: center;
+  padding: 5vh;
+}
+
+.mt-4{
+  padding-bottom: 1em;
+}
+
+.form-fields{
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-top: 3%;
+}
+
+@media(max-width: 640px){
+  .form-fields {
+    margin-left: 12%;
+    margin-right: 12%;
+  }
+}

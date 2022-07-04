@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+// import React, { useState, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
+// import axios from 'axios'
 
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
-import { getPayload } from './helpers/auth'
+// import { getPayload } from './helpers/auth'
 
 import Logo from '../images/Logo.png'
 import { userIsAuthenticated } from './helpers/auth'

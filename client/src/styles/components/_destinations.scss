@@ -23,12 +23,12 @@
 
 .bottom-left {
   position: absolute;
-  bottom: 20px;
-  left: 16px;
+  bottom: 20em;
+  left: 16em;
 }
 
-h2{
-display: flex;
+h2 {
+  display: flex;
   // color:rgb(233, 197, 38);
   color:rgb(255, 255, 255);
   // justify-content: center;
@@ -43,14 +43,14 @@ display: flex;
   align-items: center;
 }
 
-#container{
-  margin: 0;
+// #container{
+//   margin: 0;
+// }
+
+a{
+  width: 100%
 }
 
-// .destination-card{
-// margin-left: 5%;
-// margin-right: 5%;
-// }
 .card{
   &:hover{
     border: 3px solid black;
@@ -68,10 +68,7 @@ display: flex;
       height: 400%;
       margin: 0%;
     }
-    .container{
-      margin-left: 5%;
-      margin-right: 5%;
-    }
+    
     .card{
       display: flex;
       flex-wrap: wrap;
@@ -79,3 +76,65 @@ display: flex;
     margin: 5%;
     }
     }
+    @media(max-width:600px){
+    .cont-name .img{
+      height: 15em;
+    }
+    h2{
+      font-size: 2.5em;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media(max-width:767px){
+    .destinations{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 33%;
+    }
+  }
+
+  @media(max-width:700px){
+    .destinations{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+    }
+  }
+
+  @media(max-width:400px){
+    .destinations{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding-left: 12%;
+    }
+  }
+
+    @media(max-width: 575px){
+  .container{
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 100%;
+  }
+    .main-logo{
+      max-height: 1.7em;
+    }
+    .navbar{
+      display: flex;
+      align-items: center;
+      align-content: space-around;
+    }
+    .navbar-nav{
+      display: flex;
+      flex-direction: row;
+      .nav-link{
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+      }
+    }
+  }

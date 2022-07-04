@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 import { getTokenFromLocalStorage, userIsAuthenticated } from '../helpers/auth'
 
@@ -14,12 +14,12 @@ const DestinationPage = () => {
 
   const [destination, setDestination] = useState(null)
   const [hasError, setHasError] = useState({ error: false, message: '' })
-  const [currentUser, setCurrentUser] = useState()
+  // const [currentUser, setCurrentUser] = useState()
   const [reviewInput, setReviewInput] = useState({
     text: ''
   })
 
-  const { id } = useParams()
+  // const { id } = useParams()
   const { destinationId } = useParams()
   // console.log(destinationId)
 
@@ -85,19 +85,27 @@ const DestinationPage = () => {
             {/* <hr /> */}
           </div>
           <div className="after-bk">
-            <Row>
-              <Col className="image">
-                <img className="img" src={destination.image} alt={destination.name} />
-                {/* <hr /> */}
+            <Row className="img-details">
+              <Col>
+                <div className="image">
+                  <img className="img" src={destination.image} alt={destination.name} />
+                </div>
               </Col>
-              <Col className="descriptions">
-                <h5>Price: <em>£{destination.price}</em></h5>
-                <h5>Ability Level: <em>{destination.ability_level}</em></h5>
-                <h5>Duration: <em>{destination.duration} days</em></h5>
-                <hr />
-                <h5>Descripton: </h5>
-                <p>{destination.description}</p>
-                {/* <hr /> */}
+              <Col>
+                <div className="details">
+                  <h5>Price: <em>£{destination.price}</em></h5>
+                  <h5>Ability Level: <em>{destination.ability_level}</em></h5>
+                  <h5>Duration: <em>{destination.duration} days</em></h5>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <hr />
+              <Col>
+                <div className="description">
+                  <h5>Descripton: </h5>
+                  <p>{destination.description}</p>
+                </div>
               </Col>
             </Row>
             <Row>
@@ -135,7 +143,7 @@ const DestinationPage = () => {
                     destination.reviews.slice(0).reverse().map((review, id) => <div className="review-container" key={id}>
                       <h6>{review.description}</h6>
                       <p>{review.text}</p>
-                      <p>{review.created_at}</p>
+                      {/* <p>{review.created_at}</p> */}
                     </div>
                     )}
                 </div>
@@ -143,7 +151,7 @@ const DestinationPage = () => {
               <hr />
             </Row>
             <Row>
-              <div className="enquire">
+              <div className="enquire" variant="success">
                 <button>Enquire Now</button>
               </div>
             </Row>
