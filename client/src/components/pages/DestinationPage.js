@@ -26,7 +26,7 @@ const DestinationPage = () => {
   useEffect(() => {
     const getSingleDestination = async () => {
       try {
-        const { data } = await axios.get(`/destinations/${destinationId}`)
+        const { data } = await axios.get(`/api/destinations/${destinationId}`)
         setDestination(data)
       } catch (err) {
         setHasError({ error: true, message: err.message })

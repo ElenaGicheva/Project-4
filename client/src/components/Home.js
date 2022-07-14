@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     const getContinents = async () => {
       try {
-        const { data } = await axios.get('continents/')
+        const { data } = await axios.get('api/continents/')
         setContinents(data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
