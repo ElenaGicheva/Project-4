@@ -50,23 +50,23 @@ const DestinationPage = () => {
   // }, [destination])
 
   const handleReviewInputChange = (e) => {
-    setReviewInput({ ...reviewInput, text: e.target.value })
+    setReviewInput({ ...reviewInput, description: e.target.value, text: e.target.value })
   }
 
   const handleReviewSubmit = async () => {
     !userIsAuthenticated() && navigate('/login')
     try {
-      await axios.post(`/reviews/`, reviewInput, {
+      await axios.post(`/api/reviews/`, reviewInput, {
         header: {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`
         }
-
       })
       console.log(getTokenFromLocalStorage)
       const { data } = await axios.get(`/api/destinations/${destinationId}/`)
       setReviewInput(data)
       document.getElementById('text-to-reset').value = ''
       setReviewInput({
+        description: '',
         text: ''
       })
     } catch (error) {
@@ -130,6 +130,9 @@ const DestinationPage = () => {
             <Row>
               <div className="reviews">
                 <h4>Reviews</h4>
+                <div className="descrip">
+                  <textarea rows='1' cols='1' maxLength='30' placeholder='Review Description' onChange={handleReviewInputChange} id='text-to-reset'></textarea>
+                </div>
                 <div className="comments">
                   <textarea rows='5' cols='30' maxLength='300' placeholder='How was your holiday?' onChange={handleReviewInputChange} id='text-to-reset'></textarea>
                 </div>
