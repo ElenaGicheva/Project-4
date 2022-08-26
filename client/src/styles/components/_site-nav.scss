@@ -35,7 +35,7 @@
   }
 
   a {
-    width: 0;
+    width: 100%;
   }
   
   @media(max-width: 575px){
@@ -67,10 +67,11 @@
     .navbar-nav{
       display: flex;
       justify-content: flex-end;
-      // flex-direction: row;
+      flex-direction: row;
       .nav-link{
         padding-left: 0.25em;
         padding-right: 0.25em;
+        justify-content: space-between;
       }
     }
   }

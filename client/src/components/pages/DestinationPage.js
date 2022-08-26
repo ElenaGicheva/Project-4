@@ -15,13 +15,14 @@ const DestinationPage = () => {
   const [destination, setDestination] = useState(null)
   const [hasError, setHasError] = useState({ error: false, message: '' })
   // const [currentUser, setCurrentUser] = useState()
+
+  const { destinationId } = useParams()
+
   const [reviewInput, setReviewInput] = useState({
-    text: ''
+    text: '',
+    destination: destinationId
   })
 
-  // const { id } = useParams()
-  const { destinationId } = useParams()
-  // console.log(destinationId)
 
   useEffect(() => {
     const getSingleDestination = async () => {
@@ -56,9 +57,14 @@ const DestinationPage = () => {
   const handleReviewSubmit = async () => {
     !userIsAuthenticated() && navigate('/login')
     try {
-      await axios.post(`/api/reviews/`, reviewInput, {
-        header: {
-          Authorization: `Bearer ${getTokenFromLocalStorage()}`
+      await userIsAuthenticated()
+      console.log(userIsAuthenticated())
+      console.log(getTokenFromLocalStorage())
+      const token = await getTokenFromLocalStorage()
+      await axios.post(`/api/reviews/`, {
+        reviewInput,
+        headers: {
+          Authorization: `Bearer ${token}`
         }
       })
       console.log(getTokenFromLocalStorage)
@@ -151,7 +157,7 @@ const DestinationPage = () => {
                     )}
                 </div>
               </div>
-              <hr />
+              {/* <hr /> */}
             </Row>
             <Row>
               <div className="enquire" variant="success">
