@@ -109,7 +109,7 @@ const DestinationPage = () => {
               <hr />
               <Col>
                 <div className="description">
-                  <h5>Descripton: </h5>
+                  <h4>Descripton: </h4>
                   <p>{destination.description}</p>
                 </div>
               </Col>
