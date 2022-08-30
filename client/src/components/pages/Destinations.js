@@ -53,7 +53,7 @@ const Destinations = () => {
             )
           })}
           <h2 className="text-center">
-            {hasError.error || !continent.length ? 'hmmm... Something went wrong' : 'Loading...'}
+            {hasError.error && 'hmmm... Something went wrong'}
           </h2>
         </Row>
       </Container>
