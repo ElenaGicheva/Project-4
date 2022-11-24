@@ -50,11 +50,11 @@ const Login = () => {
           <div className="form-fields">
             <Form.Group className='mb-2'>
               <Form.Label htmlFor='email'>Email Address</Form.Label>
-              <Form.Control onChange={handleChange} type="email" name="email" placeholder='E.g. horses@email.com' defaultValue={formData.email} />
+              <Form.Control onChange={handleChange} type="email" name="email" placeholder='E.g. horses@email.com' defaultValue={formData.email} required />
             </Form.Group>
             <Form.Group className='mb-2'>
               <Form.Label htmlFor="password">Password</Form.Label>
-              <Form.Control onChange={handleChange} type="password" name="password" placeholder='Password' defaultValue={formData.password} />
+              <Form.Control onChange={handleChange} type="password" name="password" placeholder='Password' defaultValue={formData.password} required />
               {formError && <Form.Text>{formError}</Form.Text>}
             </Form.Group>
           </div>

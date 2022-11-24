@@ -14,7 +14,6 @@ const DestinationPage = () => {
 
   const [destination, setDestination] = useState(null)
   const [hasError, setHasError] = useState({ error: false, message: '' })
-  // const [currentUser, setCurrentUser] = useState()
 
   const { destinationId } = useParams()
 
@@ -35,22 +34,6 @@ const DestinationPage = () => {
     }
     getSingleDestination()
   }, [destinationId])
-
-
-  // useEffect(() => {
-  //   const getCurrentUser = async () => {
-  //     try {
-  //       const payload = getPayload()
-  //       const { data } = await axios.get(`/api/review/${payload.sub}`)
-  //       setCurrentUser(data)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   getCurrentUser()
-  // }, [destination])
-
-
 
   const handleReviewSubmit = async () => {
     !userIsAuthenticated() && navigate('/login')
@@ -132,10 +115,10 @@ const DestinationPage = () => {
               <div className="reviews">
                 <h4>Reviews</h4>
                 <div className="descrip">
-                  <textarea rows='1' cols='1' maxLength='30' placeholder='Review Description' onChange={(e) => setReviewInput({ ...reviewInput, description: e.target.value })} id='text-to-reset'></textarea>
+                  <textarea rows='1' cols='1' maxLength='30' placeholder=' Holiday Description' onChange={(e) => setReviewInput({ ...reviewInput, description: e.target.value })} id='text-to-reset'></textarea>
                 </div>
                 <div className="comments">
-                  <textarea rows='5' cols='30' maxLength='300' placeholder='How was your holiday?' onChange={(e) => setReviewInput({ ...reviewInput, text: e.target.value })} id='text-to-reset'></textarea>
+                  <textarea rows='5' cols='30' maxLength='300' placeholder=' How was your holiday?' onChange={(e) => setReviewInput({ ...reviewInput, text: e.target.value })} id='text-to-reset'></textarea>
                 </div>
                 <div className='submit-btn'>
                   <button id='s-btn' onClick={handleReviewSubmit}>Submit</button>
@@ -152,7 +135,7 @@ const DestinationPage = () => {
                     )}
                 </div>
               </div>
-              {/* <hr /> */}
+              <hr />
             </Row>
             <Row>
               <div className="enquire" variant="success">
