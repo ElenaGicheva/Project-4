@@ -62,6 +62,7 @@ const Register = () => {
                 type="text"
                 name="username"
                 placeholder="Username"
+                required
               />
               {formErrors.username &&
                 <Form.Text>{formErrors.username}</Form.Text>
@@ -75,6 +76,7 @@ const Register = () => {
                 type="email"
                 name="email"
                 placeholder="E.g. horses@email.com"
+                required
                 defaultValue={formData.email}
               />
               {formErrors.email && <Form.Text>{formErrors.email}</Form.Text>}
@@ -115,6 +117,7 @@ const Register = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                required
                 defaultValue={formData.password}
               />
               {formErrors.password && (
@@ -131,6 +134,7 @@ const Register = () => {
                 type="password"
                 name="password_confirmation"
                 placeholder="Confirm Password"
+                required
                 defaultValue={formData.password_confirmation}
               />
               {formErrors.passwordConfirmation && (
