@@ -26,7 +26,6 @@ const SiteNav = () => {
   return (
     <Container>
       <Navbar expand="sm" bg="dark" variant="dark">
-
         <Navbar.Brand href="/"><img className='main-logo' src={Logo} alt='horse-logo' /></Navbar.Brand>
         <Nav className="justify-content-end">
           {userIsAuthenticated() ?
@@ -42,7 +41,6 @@ const SiteNav = () => {
             </>
           }
         </Nav>
-
       </Navbar>
     </Container>
   )
