@@ -147,7 +147,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-ROOT_URLCONF = 'project.urls' #check if you have this already, if not add it in
+ROOT_URLCONF = 'HorseTrips.urls' #check if you have this already, if not add it in
 
 STATIC_URL = '/static/' # same with this
 
